@@ -20,7 +20,7 @@ import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeHierarchyConfig;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeHierarchyDao;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeHierarchyDto;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.HierarchyDto;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
+import ca.bc.gov.brmb.common.persistence.dao.DaoException;
 
 public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 

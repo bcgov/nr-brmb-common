@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>ca.bc.gov.nrs.wfone.common</groupId>
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-    <artifactId>wfone-common-code-persistence</artifactId>
-    <name>wfone-common-code-persistence</name>
-    <packaging>jar</packaging>
+	<artifactId>brmb-common-persistence</artifactId>
+	<name>brmb-common-persistence</name>
+	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies> 
-	
+	<dependencies>
+
 		<dependency>
-			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>brmb-common-persistence</artifactId>
-			<version>${project.parent.version}</version>
+			<groupId>com.vividsolutions</groupId>
+			<artifactId>jts-ora</artifactId>
 		</dependency>
 		
+		<!-- MyBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+	
+		<!-- ORACLE database driver -->
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Application Context (depends on spring-core, spring-expression, spring-aop, 
+			spring-beans) This is the central artifact for Spring's Dependency Injection 
+			Container and is generally always defined -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -45,8 +64,8 @@
 		<!-- Configure the resources to be filtered for property replacement -->
 		<resources>
 			<resource>
-			   <directory>src/main/resources</directory>
-			   <filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
 			</resource>
 		</resources>
 		<plugins>

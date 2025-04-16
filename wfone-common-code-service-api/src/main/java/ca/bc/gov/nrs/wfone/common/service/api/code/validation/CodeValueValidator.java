@@ -12,7 +12,7 @@ import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeTableConfig;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeTableDao;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeDto;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeTableDto;
-import ca.bc.gov.nrs.wfone.common.persistence.dao.DaoException;
+import ca.bc.gov.brmb.common.persistence.dao.DaoException;
 import ca.bc.gov.nrs.wfone.common.utils.ApplicationContextProvider;
 
 public class CodeValueValidator implements

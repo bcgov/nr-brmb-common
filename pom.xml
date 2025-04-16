@@ -9,7 +9,7 @@
 	<modules>
 		 <module>brmb-common-model</module>
 		 <module>brmb-common-rest-common</module>
-		 <module>wfone-common-persistence</module>
+		 <module>brmb-common-persistence</module>
 		 <module>wfone-common-service-api</module>
 		 <module>wfone-common-webade-oauth2</module>
 		 <module>wfone-common-code-persistence</module>
