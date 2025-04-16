@@ -14,7 +14,7 @@
 		 <module>brmb-common-webade-oauth2</module>
 		 <module>brmb-common-code-persistence</module>
 		 <module>brmb-common-code-service-api</module>
-		 <module>wfone-common-code-endpoints</module>
+		 <module>brmb-common-code-endpoints</module>
 		 <module>wfone-common-utils</module>
 		 <module>wfone-common-rest-endpoints</module>
 		 <module>wfone-common-checkhealth</module>
