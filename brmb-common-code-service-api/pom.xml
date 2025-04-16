@@ -7,29 +7,46 @@
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-    <artifactId>wfone-common-code-endpoints</artifactId>
-    <name>wfone-common-code-endpoints</name>
+    <artifactId>brmb-common-code-service-api</artifactId>
+    <name>brmb-common-code-service-api</name>
     <packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies> 
- 
+	<dependencies>
+	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-rest-endpoints</artifactId>
+			<artifactId>brmb-common-service-api</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency> 
-
+		</dependency>
+	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>brmb-common-code-service-api</artifactId>
+			<artifactId>brmb-common-code-persistence</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
+			<artifactId>wfone-common-webade</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 

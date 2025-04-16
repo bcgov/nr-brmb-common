@@ -23,7 +23,7 @@ import ca.bc.gov.brmb.common.service.api.ConflictException;
 import ca.bc.gov.brmb.common.service.api.ForbiddenException;
 import ca.bc.gov.brmb.common.service.api.NotFoundException;
 import ca.bc.gov.brmb.common.service.api.ValidationFailureException;
-import ca.bc.gov.nrs.wfone.common.service.api.code.CodeService;
+import ca.bc.gov.brmb.common.service.api.code.CodeService;
 import ca.bc.gov.nrs.wfone.common.utils.DateUtils;
 
 public class CodeHierarchyEndpointsImpl extends BaseEndpointsImpl implements
