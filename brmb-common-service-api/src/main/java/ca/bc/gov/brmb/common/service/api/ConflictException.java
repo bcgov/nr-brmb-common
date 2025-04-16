@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.service.api;
+package ca.bc.gov.brmb.common.service.api;
 
 public class ConflictException extends Exception
 {

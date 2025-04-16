@@ -19,8 +19,8 @@ import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeHierarchyDto;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.HierarchyDto;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeHierarchyFactory;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryException;
 
 public class CodeHierarchyResourceFactory extends BaseResourceFactory implements CodeHierarchyFactory {
 

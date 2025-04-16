@@ -24,16 +24,16 @@ import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeTableDto;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.HierarchyDto;
 import ca.bc.gov.brmb.common.persistence.dao.DaoException;
 import ca.bc.gov.brmb.common.persistence.dao.OptimisticLockingFailureDaoException;
-import ca.bc.gov.nrs.wfone.common.service.api.ConflictException;
-import ca.bc.gov.nrs.wfone.common.service.api.ForbiddenException;
-import ca.bc.gov.nrs.wfone.common.service.api.NotFoundException;
-import ca.bc.gov.nrs.wfone.common.service.api.ServiceException;
-import ca.bc.gov.nrs.wfone.common.service.api.ValidationFailureException;
+import ca.bc.gov.brmb.common.service.api.ConflictException;
+import ca.bc.gov.brmb.common.service.api.ForbiddenException;
+import ca.bc.gov.brmb.common.service.api.NotFoundException;
+import ca.bc.gov.brmb.common.service.api.ServiceException;
+import ca.bc.gov.brmb.common.service.api.ValidationFailureException;
 import ca.bc.gov.nrs.wfone.common.service.api.code.CodeService;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeHierarchyFactory;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeTableFactory;
 import ca.bc.gov.nrs.wfone.common.service.api.code.validation.CodeValidator;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
 
 public class CodeServiceImpl implements CodeService {

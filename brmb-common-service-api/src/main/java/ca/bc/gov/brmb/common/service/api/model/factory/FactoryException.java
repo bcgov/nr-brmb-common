@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.service.api.model.factory;
+package ca.bc.gov.brmb.common.service.api.model.factory;
 
 public class FactoryException extends RuntimeException {
 

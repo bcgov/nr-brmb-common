@@ -9,12 +9,12 @@ import ca.bc.gov.brmb.common.model.CodeHierarchy;
 import ca.bc.gov.brmb.common.model.CodeHierarchyList;
 import ca.bc.gov.brmb.common.model.CodeTable;
 import ca.bc.gov.brmb.common.model.CodeTableList;
-import ca.bc.gov.nrs.wfone.common.service.api.ConflictException;
-import ca.bc.gov.nrs.wfone.common.service.api.ForbiddenException;
-import ca.bc.gov.nrs.wfone.common.service.api.NotFoundException;
-import ca.bc.gov.nrs.wfone.common.service.api.ServiceException;
-import ca.bc.gov.nrs.wfone.common.service.api.ValidationFailureException;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.ConflictException;
+import ca.bc.gov.brmb.common.service.api.ForbiddenException;
+import ca.bc.gov.brmb.common.service.api.NotFoundException;
+import ca.bc.gov.brmb.common.service.api.ServiceException;
+import ca.bc.gov.brmb.common.service.api.ValidationFailureException;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
 
 public interface CodeService {

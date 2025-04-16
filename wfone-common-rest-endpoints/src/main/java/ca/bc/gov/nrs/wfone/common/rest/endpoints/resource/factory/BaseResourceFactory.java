@@ -13,8 +13,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryException;
 import ca.bc.gov.nrs.wfone.common.utils.ByteUtils;
 import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
 

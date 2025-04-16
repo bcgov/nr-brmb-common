@@ -22,7 +22,7 @@
 		</dependency>
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-service-api</artifactId>
+			<artifactId>brmb-common-service-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>

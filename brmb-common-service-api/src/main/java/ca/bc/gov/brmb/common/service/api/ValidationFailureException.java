@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.service.api;
+package ca.bc.gov.brmb.common.service.api;
 
 import java.util.ArrayList;
 import java.util.List;

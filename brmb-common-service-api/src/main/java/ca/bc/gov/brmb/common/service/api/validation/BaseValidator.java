@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.service.api.validation;
+package ca.bc.gov.brmb.common.service.api.validation;
 
 import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;

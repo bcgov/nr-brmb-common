@@ -2,7 +2,7 @@ package ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory;
 
 import java.net.URI;
 
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 
 public class ResourceFactoryContext implements FactoryContext {
 

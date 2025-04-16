@@ -7,8 +7,8 @@ import ca.bc.gov.brmb.common.model.Code;
 import ca.bc.gov.brmb.common.model.CodeTable;
 import ca.bc.gov.brmb.common.model.CodeTableList;
 import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeTableDto;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.service.api.model.factory.FactoryException;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
+import ca.bc.gov.brmb.common.service.api.model.factory.FactoryException;
 
 public interface CodeTableFactory {
 
