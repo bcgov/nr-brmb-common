@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
+import ca.bc.gov.brmb.common.rest.resource.HealthCheckResponseRsrc;
 
 public class ValidationTask extends RequestAwareRunnable {
 

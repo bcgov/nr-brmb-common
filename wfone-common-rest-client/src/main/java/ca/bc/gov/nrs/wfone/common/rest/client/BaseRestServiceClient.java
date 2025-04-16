@@ -29,12 +29,12 @@ import org.springframework.web.reactive.function.client.WebClient.Builder;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.io.geojson.GeoJsonWriter;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.BaseResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.JsonTransformer;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.Transformer;
-import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
+import ca.bc.gov.brmb.common.rest.resource.BaseResource;
+import ca.bc.gov.brmb.common.rest.resource.HealthCheckResponseRsrc;
+import ca.bc.gov.brmb.common.rest.resource.RelLink;
+import ca.bc.gov.brmb.common.rest.resource.transformers.JsonTransformer;
+import ca.bc.gov.brmb.common.rest.resource.transformers.Transformer;
+import ca.bc.gov.brmb.common.rest.resource.types.BaseResourceTypes;
 
 public abstract class BaseRestServiceClient {
 	

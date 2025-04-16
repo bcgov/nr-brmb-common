@@ -11,8 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.CodeHierarchyListRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.CodeHierarchyListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.MessageListRsrc;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeHierarchyListEndpoints;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.CodeHierarchyQueryParameters;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.validation.CodeParameterValidator;

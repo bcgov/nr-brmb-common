@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.springframework.web.reactive.function.client.WebClient;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.BaseResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.TypedResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.Transformer;
+import ca.bc.gov.brmb.common.rest.resource.BaseResource;
+import ca.bc.gov.brmb.common.rest.resource.TypedResource;
+import ca.bc.gov.brmb.common.rest.resource.transformers.Transformer;
 
 
 public abstract class ByteArrayRestDAO {

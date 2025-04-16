@@ -28,14 +28,14 @@ import org.springframework.web.reactive.function.client.WebClient.RequestHeaders
 import org.springframework.web.util.DefaultUriBuilderFactory;
 import org.springframework.web.util.UriBuilder;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.BaseResource;
-import ca.bc.gov.nrs.common.wfone.rest.resource.HeaderConstants;
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.Redirect;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.Transformer;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.TransformerException;
-import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
+import ca.bc.gov.brmb.common.rest.resource.BaseResource;
+import ca.bc.gov.brmb.common.rest.resource.HeaderConstants;
+import ca.bc.gov.brmb.common.rest.resource.MessageListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.Redirect;
+import ca.bc.gov.brmb.common.rest.resource.RelLink;
+import ca.bc.gov.brmb.common.rest.resource.transformers.Transformer;
+import ca.bc.gov.brmb.common.rest.resource.transformers.TransformerException;
+import ca.bc.gov.brmb.common.rest.resource.types.BaseResourceTypes;
 import ca.bc.gov.nrs.wfone.common.rest.client.factory.MessageListFactory;
 import ca.bc.gov.nrs.wfone.common.rest.client.factory.RedirectFactory;
 import ca.bc.gov.nrs.wfone.common.rest.client.factory.ResourceFactory;

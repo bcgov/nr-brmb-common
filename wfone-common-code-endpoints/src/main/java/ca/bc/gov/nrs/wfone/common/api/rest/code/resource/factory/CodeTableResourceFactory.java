@@ -7,11 +7,11 @@ import java.util.List;
 
 import javax.ws.rs.core.UriBuilder;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.CodeRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.CodeTableListRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.CodeTableRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.RelLink;
-import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
+import ca.bc.gov.brmb.common.rest.resource.CodeRsrc;
+import ca.bc.gov.brmb.common.rest.resource.CodeTableListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.CodeTableRsrc;
+import ca.bc.gov.brmb.common.rest.resource.RelLink;
+import ca.bc.gov.brmb.common.rest.resource.types.BaseResourceTypes;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeTableEndpoints;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeTableListEndpoints;
 import ca.bc.gov.brmb.common.model.Code;

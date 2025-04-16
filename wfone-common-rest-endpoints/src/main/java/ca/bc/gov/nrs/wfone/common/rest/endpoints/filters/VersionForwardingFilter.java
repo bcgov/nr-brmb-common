@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HeaderConstants;
+import ca.bc.gov.brmb.common.rest.resource.HeaderConstants;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.proxy.RequestProxy;
 
 public class VersionForwardingFilter implements Filter {

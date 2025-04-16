@@ -1,7 +1,7 @@
 package ca.bc.gov.nrs.wfone.common.rest.client.factory;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.Transformer;
-import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.TransformerException;
+import ca.bc.gov.brmb.common.rest.resource.transformers.Transformer;
+import ca.bc.gov.brmb.common.rest.resource.transformers.TransformerException;
 
 public interface ResourceFactory<T> {
 

@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HeaderConstants;
+import ca.bc.gov.brmb.common.rest.resource.HeaderConstants;
 
 public class CorsFilter implements ContainerRequestFilter, ContainerResponseFilter {
 

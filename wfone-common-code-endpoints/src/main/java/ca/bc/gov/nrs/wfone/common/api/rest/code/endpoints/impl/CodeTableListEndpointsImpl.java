@@ -11,8 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.CodeTableListRsrc;
-import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.CodeTableListRsrc;
+import ca.bc.gov.brmb.common.rest.resource.MessageListRsrc;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeTableListEndpoints;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.CodeTableQueryParameters;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.validation.CodeParameterValidator;

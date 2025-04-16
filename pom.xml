@@ -8,7 +8,7 @@
 	<name>wfone-common-parent</name>
 	<modules>
 		 <module>brmb-common-model</module>
-		 <module>wfone-common-rest-common</module>
+		 <module>brmb-common-rest-common</module>
 		 <module>wfone-common-persistence</module>
 		 <module>wfone-common-service-api</module>
 		 <module>wfone-common-webade-oauth2</module>

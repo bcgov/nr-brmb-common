@@ -1,6 +1,6 @@
 package ca.bc.gov.nrs.wfone.common.checkhealth;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
+import ca.bc.gov.brmb.common.rest.resource.HealthCheckResponseRsrc;
 import ca.bc.gov.brmb.common.model.ValidationStatus;
 
 public interface CheckHealthValidator {

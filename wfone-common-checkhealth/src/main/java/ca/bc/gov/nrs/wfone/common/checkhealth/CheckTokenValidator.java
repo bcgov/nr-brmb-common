@@ -3,7 +3,7 @@ package ca.bc.gov.nrs.wfone.common.checkhealth;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
+import ca.bc.gov.brmb.common.rest.resource.HealthCheckResponseRsrc;
 import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
 import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.TokenService;
 
