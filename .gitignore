@@ -1,0 +1,10 @@
+*.classpath
+*.project
+*/target
+*.settings
+dist
+*.versionsBackup
+
+# IntelliJ
+.idea
+*.iml
