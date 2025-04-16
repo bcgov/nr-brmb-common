@@ -46,8 +46,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
-import ca.bc.gov.nrs.wfone.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.model.MessageImpl;
+import ca.bc.gov.brmb.common.model.Message;
+import ca.bc.gov.brmb.common.model.MessageImpl;
 
 public abstract class BaseValidator
 {

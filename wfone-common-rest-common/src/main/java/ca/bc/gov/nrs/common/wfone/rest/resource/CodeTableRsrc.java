@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
-import ca.bc.gov.nrs.wfone.common.model.CodeTable;
+import ca.bc.gov.brmb.common.model.CodeTable;
 
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.CODE_TABLE_NAME)
 @JsonSubTypes({ @Type(value = CodeTableRsrc.class, name = BaseResourceTypes.CODE_TABLE) })

@@ -2,8 +2,8 @@ package ca.bc.gov.nrs.wfone.common.service.api.code.validation;
 
 import javax.validation.constraints.NotBlank;
 
-import ca.bc.gov.nrs.wfone.common.model.Code;
-import ca.bc.gov.nrs.wfone.common.model.CodeTable;
+import ca.bc.gov.brmb.common.model.Code;
+import ca.bc.gov.brmb.common.model.CodeTable;
 
 public interface CodeTableConstraints extends CodeTable<Code> {
 	

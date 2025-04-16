@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.model;
+package ca.bc.gov.brmb.common.model;
 
 import java.time.LocalDate;
 
@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import ca.bc.gov.nrs.wfone.common.model.transformers.LocalDateJAXBAdapter;
-import ca.bc.gov.nrs.wfone.common.model.transformers.LocalDateJacksonDeserializer;
-import ca.bc.gov.nrs.wfone.common.model.transformers.LocalDateJacksonSerializer;
+import ca.bc.gov.brmb.common.model.transformers.LocalDateJAXBAdapter;
+import ca.bc.gov.brmb.common.model.transformers.LocalDateJacksonDeserializer;
+import ca.bc.gov.brmb.common.model.transformers.LocalDateJacksonSerializer;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @XmlRootElement(namespace = HierarchyImpl.COMMON_NAMESPACE, name = HierarchyImpl.HIERARCHY_NAME)
@@ -23,7 +23,7 @@ public class HierarchyImpl implements Hierarchy {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static final String COMMON_NAMESPACE = "http://common.wfone.nrs.gov.bc.ca/v1/";	
+	public static final String COMMON_NAMESPACE = "http://common.brmb.gov.bc.ca/v1/";	
 
 	public static final String HIERARCHY_NAME = "Hierarchy";
 	public static final String HIERARCHY = COMMON_NAMESPACE + HIERARCHY_NAME;

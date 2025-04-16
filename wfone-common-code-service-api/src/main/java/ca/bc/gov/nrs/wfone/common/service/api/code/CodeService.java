@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bc.gov.nrs.wfone.common.model.Code;
-import ca.bc.gov.nrs.wfone.common.model.CodeHierarchy;
-import ca.bc.gov.nrs.wfone.common.model.CodeHierarchyList;
-import ca.bc.gov.nrs.wfone.common.model.CodeTable;
-import ca.bc.gov.nrs.wfone.common.model.CodeTableList;
+import ca.bc.gov.brmb.common.model.Code;
+import ca.bc.gov.brmb.common.model.CodeHierarchy;
+import ca.bc.gov.brmb.common.model.CodeHierarchyList;
+import ca.bc.gov.brmb.common.model.CodeTable;
+import ca.bc.gov.brmb.common.model.CodeTableList;
 import ca.bc.gov.nrs.wfone.common.service.api.ConflictException;
 import ca.bc.gov.nrs.wfone.common.service.api.ForbiddenException;
 import ca.bc.gov.nrs.wfone.common.service.api.NotFoundException;

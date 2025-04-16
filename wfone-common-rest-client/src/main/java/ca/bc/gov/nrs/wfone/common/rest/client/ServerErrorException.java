@@ -3,8 +3,8 @@ package ca.bc.gov.nrs.wfone.common.rest.client;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.bc.gov.nrs.wfone.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.model.MessageImpl;
+import ca.bc.gov.brmb.common.model.Message;
+import ca.bc.gov.brmb.common.model.MessageImpl;
 
 public class ServerErrorException extends RestDAOException {
 

@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.utils;
+package ca.bc.gov.brmb.common.utils;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -12,8 +12,9 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ca.bc.gov.nrs.wfone.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.model.MessageImpl;
+import ca.bc.gov.brmb.common.model.Message;
+import ca.bc.gov.brmb.common.model.MessageImpl;
+import ca.bc.gov.nrs.wfone.common.utils.DateUtils;
 
 public class MessageBuilder {
 	

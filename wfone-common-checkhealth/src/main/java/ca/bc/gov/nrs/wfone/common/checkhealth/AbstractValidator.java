@@ -1,6 +1,6 @@
 package ca.bc.gov.nrs.wfone.common.checkhealth;
 
-import ca.bc.gov.nrs.wfone.common.model.ValidationStatus;
+import ca.bc.gov.brmb.common.model.ValidationStatus;
 
 public abstract class AbstractValidator implements CheckHealthValidator {
 

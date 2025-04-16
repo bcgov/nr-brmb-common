@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
-import ca.bc.gov.nrs.wfone.common.model.CodeHierarchy;
-import ca.bc.gov.nrs.wfone.common.model.HierarchyImpl;
+import ca.bc.gov.brmb.common.model.CodeHierarchy;
+import ca.bc.gov.brmb.common.model.HierarchyImpl;
 
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.CODE_HIERARCHY_NAME)
 @JsonSubTypes({ @Type(value = CodeHierarchyRsrc.class, name = BaseResourceTypes.CODE_HIERARCHY) })

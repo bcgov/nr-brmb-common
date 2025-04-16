@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.model;
+package ca.bc.gov.brmb.common.model;
 
 public class MessageImpl implements Message {
 	private static final long serialVersionUID = 1L;

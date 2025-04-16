@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.model;
+package ca.bc.gov.brmb.common.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;

@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
-import ca.bc.gov.nrs.wfone.common.model.HealthCheckResponse;
-import ca.bc.gov.nrs.wfone.common.model.ValidationStatus;
+import ca.bc.gov.brmb.common.model.HealthCheckResponse;
+import ca.bc.gov.brmb.common.model.ValidationStatus;
 
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.HEALTH_CHECK_RESPONSE_NAME)
 @JsonSubTypes({ @Type(value = HealthCheckResponseRsrc.class, name = BaseResourceTypes.HEALTH_CHECK_RESPONSE) })

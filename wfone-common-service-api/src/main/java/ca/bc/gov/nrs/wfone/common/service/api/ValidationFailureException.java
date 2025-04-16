@@ -3,7 +3,7 @@ package ca.bc.gov.nrs.wfone.common.service.api;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.bc.gov.nrs.wfone.common.model.Message;
+import ca.bc.gov.brmb.common.model.Message;
 
 public class ValidationFailureException extends Exception {
 

@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
-import ca.bc.gov.nrs.wfone.common.model.CodeHierarchyList;
+import ca.bc.gov.brmb.common.model.CodeHierarchyList;
 
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.CODE_HIERARCHY_LIST_NAME)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")

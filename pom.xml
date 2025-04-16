@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>wfone-common-parent</name>
 	<modules>
-		 <module>wfone-common-model</module>
+		 <module>brmb-common-model</module>
 		 <module>wfone-common-rest-common</module>
 		 <module>wfone-common-persistence</module>
 		 <module>wfone-common-service-api</module>

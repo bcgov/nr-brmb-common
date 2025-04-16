@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import ca.bc.gov.nrs.wfone.common.model.Hierarchy;
+import ca.bc.gov.brmb.common.model.Hierarchy;
 
 public interface HierarchyConstraints extends Hierarchy {
 

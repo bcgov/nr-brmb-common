@@ -16,7 +16,7 @@ import ca.bc.gov.nrs.common.wfone.rest.resource.MessageListRsrc;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeHierarchyListEndpoints;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.CodeHierarchyQueryParameters;
 import ca.bc.gov.nrs.wfone.common.api.rest.code.parameters.validation.CodeParameterValidator;
-import ca.bc.gov.nrs.wfone.common.model.Message;
+import ca.bc.gov.brmb.common.model.Message;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
 import ca.bc.gov.nrs.wfone.common.service.api.code.CodeService;
 import ca.bc.gov.nrs.wfone.common.utils.DateUtils;

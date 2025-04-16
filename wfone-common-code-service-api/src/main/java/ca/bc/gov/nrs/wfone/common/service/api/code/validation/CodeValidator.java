@@ -6,11 +6,11 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.model.Code;
-import ca.bc.gov.nrs.wfone.common.model.CodeHierarchy;
-import ca.bc.gov.nrs.wfone.common.model.CodeTable;
-import ca.bc.gov.nrs.wfone.common.model.Hierarchy;
-import ca.bc.gov.nrs.wfone.common.model.Message;
+import ca.bc.gov.brmb.common.model.Code;
+import ca.bc.gov.brmb.common.model.CodeHierarchy;
+import ca.bc.gov.brmb.common.model.CodeTable;
+import ca.bc.gov.brmb.common.model.Hierarchy;
+import ca.bc.gov.brmb.common.model.Message;
 import ca.bc.gov.nrs.wfone.common.service.api.validation.BaseValidator;
 
 public class CodeValidator extends BaseValidator {

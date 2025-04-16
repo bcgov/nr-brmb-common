@@ -2,7 +2,7 @@ package ca.bc.gov.nrs.wfone.common.rest.client;
 
 import java.util.List;
 
-import ca.bc.gov.nrs.wfone.common.model.Message;
+import ca.bc.gov.brmb.common.model.Message;
 
 public class RestDAOException extends Exception {
 

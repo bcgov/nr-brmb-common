@@ -15,7 +15,7 @@ import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.LocalDateJAXBAdapte
 import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.LocalDateJacksonDeserializer;
 import ca.bc.gov.nrs.common.wfone.rest.resource.transformers.LocalDateJacksonSerializer;
 import ca.bc.gov.nrs.common.wfone.rest.resource.types.BaseResourceTypes;
-import ca.bc.gov.nrs.wfone.common.model.Code;
+import ca.bc.gov.brmb.common.model.Code;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.CODE_NAME)

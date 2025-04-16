@@ -11,7 +11,7 @@ import ca.bc.gov.nrs.common.wfone.rest.resource.HealthCheckResponseRsrc;
 import ca.bc.gov.nrs.wfone.common.checkhealth.CheckHealthValidator;
 import ca.bc.gov.nrs.wfone.common.checkhealth.DependencyLoopException;
 import ca.bc.gov.nrs.wfone.common.checkhealth.MissingCallstackException;
-import ca.bc.gov.nrs.wfone.common.model.ValidationStatus;
+import ca.bc.gov.brmb.common.model.ValidationStatus;
 
 public class CheckHealthEndpointImpl extends BaseEndpointsImpl implements CheckHealthEndpoint {
 	
