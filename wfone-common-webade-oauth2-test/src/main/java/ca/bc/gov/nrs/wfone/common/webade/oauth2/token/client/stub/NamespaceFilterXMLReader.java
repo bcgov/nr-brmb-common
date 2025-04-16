@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.stub;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client.stub;
 
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;

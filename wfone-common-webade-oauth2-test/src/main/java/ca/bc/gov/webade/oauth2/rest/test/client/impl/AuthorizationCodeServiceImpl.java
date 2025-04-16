@@ -24,8 +24,8 @@ import org.apache.logging.log4j.ThreadContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.AccessToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.AccessToken;
 import ca.bc.gov.webade.oauth2.rest.test.client.AuthorizationCodeService;
 import ca.bc.gov.webade.oauth2.rest.test.resource.AuthorizationCode;
 

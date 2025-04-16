@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client;
 
 import java.io.IOException;
 import java.util.regex.Matcher;

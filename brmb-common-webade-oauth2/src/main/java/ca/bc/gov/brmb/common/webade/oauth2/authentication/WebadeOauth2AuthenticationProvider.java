@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.authentication;
+package ca.bc.gov.brmb.common.webade.oauth2.authentication;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -29,10 +29,10 @@ import org.springframework.security.oauth2.server.resource.BearerTokenAuthentica
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.TokenService;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.AccessToken;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.CheckedToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.TokenService;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.AccessToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.CheckedToken;
 
 public class WebadeOauth2AuthenticationProvider implements AuthenticationProvider{
 

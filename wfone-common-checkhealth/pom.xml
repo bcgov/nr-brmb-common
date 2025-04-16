@@ -23,7 +23,7 @@
 		
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-webade-oauth2</artifactId>
+			<artifactId>brmb-common-webade-oauth2</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		

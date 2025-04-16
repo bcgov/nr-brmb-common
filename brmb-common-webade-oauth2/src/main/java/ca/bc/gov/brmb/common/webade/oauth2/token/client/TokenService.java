@@ -1,7 +1,7 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client;
 
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.AccessToken;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.CheckedToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.AccessToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.CheckedToken;
 
 public interface TokenService {
 	

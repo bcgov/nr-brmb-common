@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.impl;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client.impl;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.CheckedToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.CheckedToken;
 
 public class CheckedTokenCache implements Cache<CheckedToken> {
 

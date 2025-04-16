@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.authentication;
+package ca.bc.gov.brmb.common.webade.oauth2.authentication;
 
 import java.util.Arrays;
 import java.util.Collection;

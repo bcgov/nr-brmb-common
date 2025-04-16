@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client.resource;
 
 import java.io.Serializable;
 import java.util.Arrays;

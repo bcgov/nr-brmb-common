@@ -7,8 +7,8 @@
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-    <artifactId>wfone-common-webade-oauth2</artifactId>
-    <name>wfone-common-webade-oauth2</name>
+    <artifactId>brmb-common-webade-oauth2</artifactId>
+    <name>brmb-common-webade-oauth2</name>
     <packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

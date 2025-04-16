@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.stub;
+package ca.bc.gov.brmb.common.webade.oauth2.token.client.stub;
 
 import java.util.Collections;
 import java.util.Date;
@@ -11,12 +11,12 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.Oauth2ClientException;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.TokenService;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.AccessToken;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.CheckedToken;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.transformers.JsonTransformer;
-import ca.bc.gov.nrs.wfone.common.webade.oauth2.token.client.resource.transformers.TransformerException;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.Oauth2ClientException;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.TokenService;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.AccessToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.CheckedToken;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.transformers.JsonTransformer;
+import ca.bc.gov.brmb.common.webade.oauth2.token.client.resource.transformers.TransformerException;
 
 public class TokenServiceStub implements TokenService {
 
