@@ -358,4 +358,16 @@ public class TokenServiceStub implements TokenService {
 				|| "refresh_token".equals(grantType);
 	}
 
+	@Override
+	public AccessToken getToken(String scope) throws Oauth2ClientException {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getToken'");
+	}
+
+	@Override
+	public void setDefaultClientSecret(String defaultClientSecret) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'setDefaultClientSecret'");
+	}
+
 }
