@@ -7,8 +7,8 @@
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-    <artifactId>wfone-common-code-persistence</artifactId>
-    <name>wfone-common-code-persistence</name>
+    <artifactId>brmb-common-code-persistence</artifactId>
+    <name>brmb-common-code-persistence</name>
     <packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

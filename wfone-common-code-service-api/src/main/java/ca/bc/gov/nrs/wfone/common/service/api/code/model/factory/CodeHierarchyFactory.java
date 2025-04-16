@@ -5,7 +5,7 @@ import java.util.List;
 
 import ca.bc.gov.brmb.common.model.CodeHierarchy;
 import ca.bc.gov.brmb.common.model.CodeHierarchyList;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeHierarchyDto;
+import ca.bc.gov.brmb.common.persistence.code.dto.CodeHierarchyDto;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryException;
 

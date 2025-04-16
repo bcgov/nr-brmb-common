@@ -15,8 +15,8 @@ import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeHierarchyEndpoints
 import ca.bc.gov.nrs.wfone.common.api.rest.code.endpoints.CodeHierarchyListEndpoints;
 import ca.bc.gov.brmb.common.model.CodeHierarchy;
 import ca.bc.gov.brmb.common.model.HierarchyImpl;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeHierarchyDto;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.HierarchyDto;
+import ca.bc.gov.brmb.common.persistence.code.dto.CodeHierarchyDto;
+import ca.bc.gov.brmb.common.persistence.code.dto.HierarchyDto;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.BaseResourceFactory;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeHierarchyFactory;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;

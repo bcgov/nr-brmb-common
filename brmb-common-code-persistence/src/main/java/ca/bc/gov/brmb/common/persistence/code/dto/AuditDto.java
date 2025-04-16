@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.persistence.code.dto;
+package ca.bc.gov.brmb.common.persistence.code.dto;
 
 import java.time.Instant;
 

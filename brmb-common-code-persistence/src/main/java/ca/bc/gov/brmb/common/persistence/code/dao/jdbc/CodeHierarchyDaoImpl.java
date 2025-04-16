@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.persistence.code.dao.jdbc;
+package ca.bc.gov.brmb.common.persistence.code.dao.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +16,10 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeHierarchyConfig;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeHierarchyDao;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.CodeHierarchyDto;
-import ca.bc.gov.nrs.wfone.common.persistence.code.dto.HierarchyDto;
+import ca.bc.gov.brmb.common.persistence.code.dao.CodeHierarchyConfig;
+import ca.bc.gov.brmb.common.persistence.code.dao.CodeHierarchyDao;
+import ca.bc.gov.brmb.common.persistence.code.dto.CodeHierarchyDto;
+import ca.bc.gov.brmb.common.persistence.code.dto.HierarchyDto;
 import ca.bc.gov.brmb.common.persistence.dao.DaoException;
 
 public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {

@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.persistence.code.dao;
+package ca.bc.gov.brmb.common.persistence.code.dao;
 
 public class CodeHierarchyConfig {
 

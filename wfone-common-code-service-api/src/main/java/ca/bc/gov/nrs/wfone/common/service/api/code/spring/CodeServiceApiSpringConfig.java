@@ -2,14 +2,14 @@ package ca.bc.gov.nrs.wfone.common.service.api.code.spring;
 
 import java.util.List;
 
-import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeHierarchyConfig;
+import ca.bc.gov.brmb.common.persistence.code.dao.CodeHierarchyConfig;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeHierarchyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
-import ca.bc.gov.nrs.wfone.common.persistence.code.dao.CodeTableConfig;
+import ca.bc.gov.brmb.common.persistence.code.dao.CodeTableConfig;
 import ca.bc.gov.nrs.wfone.common.service.api.code.impl.CodeServiceImpl;
 import ca.bc.gov.nrs.wfone.common.service.api.code.model.factory.CodeTableFactory;
 import ca.bc.gov.nrs.wfone.common.service.api.code.validation.CodeValidator;

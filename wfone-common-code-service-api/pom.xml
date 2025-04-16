@@ -23,7 +23,7 @@
 	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-code-persistence</artifactId>
+			<artifactId>brmb-common-code-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 	

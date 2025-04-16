@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.persistence.code.dao.jdbc;
+package ca.bc.gov.brmb.common.persistence.code.dao.jdbc;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
