@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone;
+package ca.bc.gov.brmb;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

@@ -34,7 +34,7 @@ public class LoggingConfigurer {
 	public void init() {
 		logger.info("<init");
 
-    logger.warn("ALERT: LoggingConfigurer has been deprecated with WFONE Common v1.3.0");
+    logger.warn("ALERT: LoggingConfigurer has been deprecated with BRMB Common v1.3.0");
 
 		Logger rootLogger = LogManager.getRootLogger();
 		logger.debug(rootLogger.getLevel() + " " + rootLogger.getName());

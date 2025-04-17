@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-	<artifactId>wfone-common-parent</artifactId>
+	<groupId>ca.bc.gov.brmb.common</groupId>
+	<artifactId>brmb-common-parent</artifactId>
 	<version>1.4.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>wfone-common-parent</name>
+	<name>brmb-common-parent</name>
 	<modules>
 		 <module>brmb-common-model</module>
 		 <module>brmb-common-rest-common</module>
