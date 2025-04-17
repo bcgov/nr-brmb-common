@@ -19,7 +19,7 @@
 		 <module>brmb-common-rest-endpoints</module>
 		 <module>brmb-common-checkhealth</module>
 		 <module>brmb-common-rest-client</module>
-		 <module>wfone-common-http-utils</module>
+		 <module>brmb-common-http-utils</module>
 		 <module>wfone-common-webade</module>
 		 <module>wfone-common-webade-oauth2-test</module>
 	</modules>

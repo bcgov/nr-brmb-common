@@ -32,7 +32,7 @@
 		</dependency>
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-http-utils</artifactId>
+			<artifactId>brmb-common-http-utils</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 	

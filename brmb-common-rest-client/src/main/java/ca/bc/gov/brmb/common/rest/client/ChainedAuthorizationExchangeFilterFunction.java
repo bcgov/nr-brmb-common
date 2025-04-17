@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ca.bc.gov.nrs.wfone.common.utils.HttpServletRequestHolder;
+import ca.bc.gov.brmb.common.utils.HttpServletRequestHolder;
 
 public final class ChainedAuthorizationExchangeFilterFunction extends AuthorizationHeaderExchangeFilterFunction {
 	
