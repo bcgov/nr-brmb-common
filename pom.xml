@@ -17,7 +17,7 @@
 		 <module>brmb-common-code-endpoints</module>
 		 <module>brmb-common-utils</module>
 		 <module>brmb-common-rest-endpoints</module>
-		 <module>wfone-common-checkhealth</module>
+		 <module>brmb-common-checkhealth</module>
 		 <module>wfone-common-rest-client</module>
 		 <module>wfone-common-http-utils</module>
 		 <module>wfone-common-webade</module>

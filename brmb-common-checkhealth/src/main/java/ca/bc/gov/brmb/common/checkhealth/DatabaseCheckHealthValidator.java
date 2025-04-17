@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.checkhealth;
+package ca.bc.gov.brmb.common.checkhealth;
 
 import java.sql.Connection;
 import java.sql.SQLException;

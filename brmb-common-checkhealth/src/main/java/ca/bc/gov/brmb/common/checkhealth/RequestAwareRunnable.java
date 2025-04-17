@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.checkhealth;
+package ca.bc.gov.brmb.common.checkhealth;
 
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;

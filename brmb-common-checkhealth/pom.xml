@@ -7,8 +7,8 @@
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-	<artifactId>wfone-common-checkhealth</artifactId>
-	<name>wfone-common-checkhealth</name>
+	<artifactId>brmb-common-checkhealth</artifactId>
+	<name>brmb-common-checkhealth</name>
 	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

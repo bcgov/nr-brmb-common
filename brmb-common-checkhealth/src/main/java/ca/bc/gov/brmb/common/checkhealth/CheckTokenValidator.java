@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.checkhealth;
+package ca.bc.gov.brmb.common.checkhealth;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bc.gov.brmb.common.rest.resource.HealthCheckResponseRsrc;
-import ca.bc.gov.nrs.wfone.common.checkhealth.CheckHealthValidator;
-import ca.bc.gov.nrs.wfone.common.checkhealth.DependencyLoopException;
-import ca.bc.gov.nrs.wfone.common.checkhealth.MissingCallstackException;
+import ca.bc.gov.brmb.common.checkhealth.CheckHealthValidator;
+import ca.bc.gov.brmb.common.checkhealth.DependencyLoopException;
+import ca.bc.gov.brmb.common.checkhealth.MissingCallstackException;
 import ca.bc.gov.brmb.common.model.ValidationStatus;
 
 public class CheckHealthEndpointImpl extends BaseEndpointsImpl implements CheckHealthEndpoint {
