@@ -25,13 +25,12 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @Path("/codeTables/{codeTableName}")
 @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public interface CodeTableEndpoints extends BaseEndpoints {
 	
-	@Operation(operationId = "Get CodeTable resource by code table name.", summary = "Get CodeTable resource by code table name.", security = @SecurityRequirement(name = "Webade-OAUTH2", scopes = {"GETTOPLEVEL"}), extensions = {@Extension(properties = {@ExtensionProperty(name = "auth-type", value = "#{wso2.x-auth-type.app_and_app_user}"), @ExtensionProperty(name = "throttling-tier", value = "Unlimited") })})
+	@Operation(operationId = "Get CodeTable resource by code table name.", summary = "Get CodeTable resource by code table name.", extensions = {@Extension(properties = {@ExtensionProperty(name = "auth-type", value = "#{wso2.x-auth-type.app_and_app_user}"), @ExtensionProperty(name = "throttling-tier", value = "Unlimited") })})
 	@Parameters({
 		@Parameter(name = HeaderConstants.REQUEST_ID_HEADER, description = HeaderConstants.REQUEST_ID_HEADER_DESCRIPTION, required = false, schema = @Schema(implementation = String.class), in = ParameterIn.HEADER),
 		@Parameter(name = HeaderConstants.VERSION_HEADER, description = HeaderConstants.VERSION_HEADER_DESCRIPTION, required = false, schema = @Schema(implementation = Integer.class), in = ParameterIn.HEADER),
@@ -51,7 +50,7 @@ public interface CodeTableEndpoints extends BaseEndpoints {
 			@Parameter(description = "Return the results as of the effectiveAsOfDate.") @QueryParam("effectiveAsOfDate") String effectiveAsOfDate
 	);
 
-	@Operation(operationId = "Update CodeTable resource by code table name.", summary = "Update CodeTable by code table name.", security = @SecurityRequirement(name = "Webade-OAUTH2", scopes = {"GETTOPLEVEL"}), extensions = {@Extension(properties = {@ExtensionProperty(name = "auth-type", value = "#{wso2.x-auth-type.app_and_app_user}"), @ExtensionProperty(name = "throttling-tier", value = "Unlimited") })})
+	@Operation(operationId = "Update CodeTable resource by code table name.", summary = "Update CodeTable by code table name.", extensions = {@Extension(properties = {@ExtensionProperty(name = "auth-type", value = "#{wso2.x-auth-type.app_and_app_user}"), @ExtensionProperty(name = "throttling-tier", value = "Unlimited") })})
 	@Parameters({
 		@Parameter(name = HeaderConstants.REQUEST_ID_HEADER, description = HeaderConstants.REQUEST_ID_HEADER_DESCRIPTION, required = false, schema = @Schema(implementation = String.class), in = ParameterIn.HEADER),
 		@Parameter(name = HeaderConstants.VERSION_HEADER, description = HeaderConstants.VERSION_HEADER_DESCRIPTION, required = false, schema = @Schema(implementation = Integer.class), in = ParameterIn.HEADER),
