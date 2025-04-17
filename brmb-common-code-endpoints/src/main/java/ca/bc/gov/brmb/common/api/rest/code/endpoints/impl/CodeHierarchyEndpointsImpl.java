@@ -18,7 +18,7 @@ import ca.bc.gov.brmb.common.api.rest.code.endpoints.CodeHierarchyEndpoints;
 import ca.bc.gov.brmb.common.api.rest.code.parameters.EffectiveAsOfParameter;
 import ca.bc.gov.brmb.common.api.rest.code.parameters.validation.CodeParameterValidator;
 import ca.bc.gov.brmb.common.model.Message;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
+import ca.bc.gov.brmb.common.rest.endpoints.BaseEndpointsImpl;
 import ca.bc.gov.brmb.common.service.api.ConflictException;
 import ca.bc.gov.brmb.common.service.api.ForbiddenException;
 import ca.bc.gov.brmb.common.service.api.NotFoundException;

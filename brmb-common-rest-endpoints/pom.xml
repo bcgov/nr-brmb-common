@@ -7,24 +7,57 @@
 		<artifactId>wfone-common-parent</artifactId>
 		<version>1.4.2-SNAPSHOT</version>
 	</parent>
-    <artifactId>brmb-common-code-endpoints</artifactId>
-    <name>brmb-common-code-endpoints</name>
+    <artifactId>brmb-common-rest-endpoints</artifactId>
+    <name>brmb-common-rest-endpoints</name>
     <packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	<dependencies> 
- 
+	<dependencies>  
+	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>brmb-common-rest-endpoints</artifactId>
+			<artifactId>brmb-common-rest-common</artifactId>
 			<version>${project.parent.version}</version>
-		</dependency> 
+		</dependency>
+		<dependency>
+			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
+			<artifactId>brmb-common-service-api</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
+			<artifactId>wfone-common-checkhealth</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
+			<artifactId>wfone-common-http-utils</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+	
+		<dependency>
+	      <groupId>org.apache.httpcomponents</groupId>
+	      <artifactId>httpclient</artifactId>
+	    </dependency>  
+		
+		<dependency>
+		    <groupId>io.swagger.core.v3</groupId>
+		    <artifactId>swagger-annotations</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>io.swagger.core.v3</groupId>
+		    <artifactId>swagger-jaxrs2</artifactId>
+		</dependency>
+	    <dependency>
+	      <groupId>io.swagger.core.v3</groupId>
+	      <artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>
+	    </dependency>
 
 		<dependency>
-			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>brmb-common-code-service-api</artifactId>
-			<version>${project.parent.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		
 		<dependency>
@@ -32,6 +65,40 @@
 		    <artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.ext</groupId>
+		    <artifactId>jersey-spring5</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-multipart</artifactId>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
 
 		<dependency>
 			<groupId>junit</groupId>

@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import ca.bc.gov.brmb.common.rest.resource.CodeTableRsrc;
 import ca.bc.gov.brmb.common.rest.resource.HeaderConstants;
 import ca.bc.gov.brmb.common.rest.resource.MessageListRsrc;
-import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpoints;
+import ca.bc.gov.brmb.common.rest.endpoints.BaseEndpoints;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
