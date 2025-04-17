@@ -19,7 +19,7 @@ import ca.bc.gov.brmb.common.api.rest.code.parameters.validation.CodeParameterVa
 import ca.bc.gov.brmb.common.model.Message;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.BaseEndpointsImpl;
 import ca.bc.gov.brmb.common.service.api.code.CodeService;
-import ca.bc.gov.nrs.wfone.common.utils.DateUtils;
+import ca.bc.gov.brmb.common.utils.DateUtils;
 
 public class CodeTableListEndpointsImpl extends BaseEndpointsImpl implements
 		CodeTableListEndpoints {

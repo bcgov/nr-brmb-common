@@ -13,7 +13,7 @@ import ca.bc.gov.brmb.common.persistence.code.dao.CodeTableDao;
 import ca.bc.gov.brmb.common.persistence.code.dto.CodeDto;
 import ca.bc.gov.brmb.common.persistence.code.dto.CodeTableDto;
 import ca.bc.gov.brmb.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.utils.ApplicationContextProvider;
+import ca.bc.gov.brmb.common.utils.ApplicationContextProvider;
 
 public class CodeValueValidator implements
 		ConstraintValidator<CodeValue, String> {

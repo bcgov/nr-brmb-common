@@ -15,7 +15,7 @@
 		 <module>brmb-common-code-persistence</module>
 		 <module>brmb-common-code-service-api</module>
 		 <module>brmb-common-code-endpoints</module>
-		 <module>wfone-common-utils</module>
+		 <module>brmb-common-utils</module>
 		 <module>wfone-common-rest-endpoints</module>
 		 <module>wfone-common-checkhealth</module>
 		 <module>wfone-common-rest-client</module>

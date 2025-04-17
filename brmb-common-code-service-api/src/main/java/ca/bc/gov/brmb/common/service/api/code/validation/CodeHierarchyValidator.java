@@ -12,7 +12,7 @@ import ca.bc.gov.brmb.common.persistence.code.dao.CodeHierarchyDao;
 import ca.bc.gov.brmb.common.persistence.code.dto.CodeHierarchyDto;
 import ca.bc.gov.brmb.common.persistence.code.dto.HierarchyDto;
 import ca.bc.gov.brmb.common.persistence.dao.DaoException;
-import ca.bc.gov.nrs.wfone.common.utils.ApplicationContextProvider;
+import ca.bc.gov.brmb.common.utils.ApplicationContextProvider;
 
 public class CodeHierarchyValidator {
 

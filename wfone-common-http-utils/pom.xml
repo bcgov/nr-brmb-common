@@ -17,7 +17,7 @@
 	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-utils</artifactId>
+			<artifactId>brmb-common-utils</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		

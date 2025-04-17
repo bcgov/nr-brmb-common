@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.utils;
+package ca.bc.gov.brmb.common.utils;
 
 import java.time.Instant;
 import java.time.LocalDate;

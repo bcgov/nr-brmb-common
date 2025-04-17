@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.utils;
+package ca.bc.gov.brmb.common.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -44,7 +44,7 @@ import ca.bc.gov.brmb.common.rest.resource.types.BaseResourceTypes;
 import ca.bc.gov.brmb.common.model.Message;
 import ca.bc.gov.nrs.wfone.common.rest.endpoints.resource.factory.ResourceFactoryContext;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.utils.ByteUtils;
+import ca.bc.gov.brmb.common.utils.ByteUtils;
 import ca.bc.gov.nrs.wfone.common.utils.HttpServletRequestHolder;
 import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
 

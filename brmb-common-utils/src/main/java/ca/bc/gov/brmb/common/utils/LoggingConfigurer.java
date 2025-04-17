@@ -1,4 +1,4 @@
-package ca.bc.gov.nrs.wfone.common.utils;
+package ca.bc.gov.brmb.common.utils;
 
 import java.util.Enumeration;
 import java.util.Properties;
