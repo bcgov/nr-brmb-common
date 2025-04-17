@@ -55,7 +55,7 @@ public class CodeTableListEndpointsImpl extends BaseEndpointsImpl implements
 						.entity(validationMessages).build();
 			} else {
 
-				CodeTableListRsrc results = (CodeTableListRsrc)service.getCodeTableList(DateUtils.toLocalDate(effectiveAsOfDate), codeTableName, getFactoryContext(), getWebAdeAuthentication());
+				CodeTableListRsrc results = (CodeTableListRsrc)service.getCodeTableList(DateUtils.toLocalDate(effectiveAsOfDate), codeTableName, getFactoryContext());
 	
 				GenericEntity<CodeTableListRsrc> entity = new GenericEntity<CodeTableListRsrc>(
 						results) {

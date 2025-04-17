@@ -11,7 +11,6 @@
 		 <module>brmb-common-rest-common</module>
 		 <module>brmb-common-persistence</module>
 		 <module>brmb-common-service-api</module>
-		 <module>brmb-common-webade-oauth2</module>
 		 <module>brmb-common-code-persistence</module>
 		 <module>brmb-common-code-service-api</module>
 		 <module>brmb-common-code-endpoints</module>
@@ -20,8 +19,6 @@
 		 <module>brmb-common-checkhealth</module>
 		 <module>brmb-common-rest-client</module>
 		 <module>brmb-common-http-utils</module>
-		 <module>brmb-common-webade</module>
-		 <module>brmb-common-webade-oauth2-test</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

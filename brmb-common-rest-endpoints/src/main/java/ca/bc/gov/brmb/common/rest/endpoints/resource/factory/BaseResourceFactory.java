@@ -16,7 +16,6 @@ import java.util.UUID;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryException;
 import ca.bc.gov.brmb.common.utils.ByteUtils;
-import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public abstract class BaseResourceFactory {
 
@@ -202,17 +201,6 @@ public abstract class BaseResourceFactory {
 					// do nothing
 				}
 			}
-		}
-
-		return result;
-	}
-	
-	protected static final boolean isAuthenticatedUser(WebAdeAuthentication authentication, String userTypeCode, String userGuid) {
-		boolean result = false;
-
-		if(authentication.getUserTypeCode().equals(userTypeCode)&&authentication.getUserGuid().equals(userGuid)) {
-			
-			result = true;
 		}
 
 		return result;

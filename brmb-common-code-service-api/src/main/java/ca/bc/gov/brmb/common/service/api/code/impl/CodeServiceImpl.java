@@ -34,7 +34,6 @@ import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeHierarchyFactory
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeTableFactory;
 import ca.bc.gov.brmb.common.service.api.code.validation.CodeValidator;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public class CodeServiceImpl implements CodeService {
 
@@ -58,8 +57,7 @@ public class CodeServiceImpl implements CodeService {
 	public CodeTableList<? extends CodeTable<? extends Code>> getCodeTableList(
 			LocalDate effectiveAsOfDate, 
 			String codeTableName, 
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException {
+			FactoryContext context) throws ServiceException {
 		logger.debug("<getCodeTables");
 
 		CodeTableList<? extends CodeTable<? extends Code>> results = null;
@@ -84,42 +82,27 @@ public class CodeServiceImpl implements CodeService {
 
 				if(codeTableConfig!=null) {
 					
-					boolean canRead = true;
-					String readScope = codeTableConfig.getReadScope();
-					if(readScope!=null&&readScope.trim().length()>0) {
-						canRead = webAdeAuthentication.hasAuthority(readScope);
-					}
-				
-					if(canRead) {
-					
-						try {
-							
-							CodeTableDao dao = codeTableConfig.getCodeTableDao();
-							
-							if(dao==null) {
-								dao = this.codeTableDao;
-							}
-							
-							if(dao==null) {
-								logger.error("No codeTableDao has been configured for "+codeTableConfig.getCodeTableName()+".");
-							}
-							
-							dtos.add(dao.fetch(codeTableConfig, effectiveAsOfDate));
-							
-						} catch(IllegalArgumentException e) {
-							// do nothing
+					try {
+						
+						CodeTableDao dao = codeTableConfig.getCodeTableDao();
+						
+						if(dao==null) {
+							dao = this.codeTableDao;
 						}
+						
+						if(dao==null) {
+							logger.error("No codeTableDao has been configured for "+codeTableConfig.getCodeTableName()+".");
+						}
+						
+						dtos.add(dao.fetch(codeTableConfig, effectiveAsOfDate));
+						
+					} catch(IllegalArgumentException e) {
+						// do nothing
 					}
 				}
 			} else {
 				
 				for(CodeTableConfig codeTableConfig:this.codeTableConfigs) {
-					
-					boolean canRead = true;
-					String readScope = codeTableConfig.getReadScope();
-					if(readScope!=null&&readScope.trim().length()>0) {
-						canRead = webAdeAuthentication.hasAuthority(readScope);
-					}
 					
 					CodeTableDao dao = codeTableConfig.getCodeTableDao();
 					
@@ -131,9 +114,7 @@ public class CodeServiceImpl implements CodeService {
 						logger.error("No codeTableDao has been configured for "+codeTableConfig.getCodeTableName()+".");
 					}
 					
-					if(canRead) {
-						dtos.add(dao.fetch(codeTableConfig, effectiveAsOfDate));
-					}
+					dtos.add(dao.fetch(codeTableConfig, effectiveAsOfDate));
 				}
 			}
 
@@ -153,8 +134,7 @@ public class CodeServiceImpl implements CodeService {
 	public CodeTable<? extends Code> getCodeTable(
 			String codeTableName, 
 			LocalDate effectiveAsOfDate, 
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext context)
 			throws ServiceException, ForbiddenException, NotFoundException {
 		logger.debug("<getCodeTable");
 
@@ -178,16 +158,6 @@ public class CodeServiceImpl implements CodeService {
 				throw new NotFoundException("Did not find the CodeTable: "+codeTableName);
 			}
 			
-			boolean canRead = true;
-			String readScope = codeTableConfig.getReadScope();
-			if(readScope!=null&&readScope.trim().length()>0) {
-				canRead = webAdeAuthentication.hasAuthority(readScope);
-			}
-			
-			if(!canRead) {
-				throw new NotFoundException("Did not find the CodeTable: "+codeTableName);
-			}
-			
 			CodeTableDao dao = codeTableConfig.getCodeTableDao();
 			
 			if(dao==null) {
@@ -203,14 +173,8 @@ public class CodeServiceImpl implements CodeService {
 			if (dto == null) {
 				throw new NotFoundException("Did not find the CodeTable: "+codeTableName);
 			}
-			
-			boolean canUpdate = false;
-			String updateScope = codeTableConfig.getUpdateScope();
-			if(updateScope!=null&&updateScope.trim().length()>0) {
-				canUpdate = webAdeAuthentication.hasAuthority(updateScope);
-			}
 
-			result = this.codeTableFactory.getCodeTable(dto, effectiveAsOfDate, canUpdate, context);
+			result = this.codeTableFactory.getCodeTable(dto, effectiveAsOfDate, true, context);
 			
 		} catch (DaoException e) {
 			
@@ -226,8 +190,7 @@ public class CodeServiceImpl implements CodeService {
 			String codeTableName,
 			String optimisticLock,
 			CodeTable<? extends Code> codeTable,
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext context)
 			throws ServiceException, NotFoundException, ForbiddenException, ConflictException, ValidationFailureException {
 		logger.debug("<updateCodeTable");
 
@@ -248,16 +211,6 @@ public class CodeServiceImpl implements CodeService {
 			}
 			
 			if(codeTableConfig==null) {
-				throw new NotFoundException("Did not find the CodeTable: "+codeTableName);
-			}
-			
-			boolean canRead = true;
-			String readScope = codeTableConfig.getReadScope();
-			if(readScope!=null&&readScope.trim().length()>0) {
-				canRead = webAdeAuthentication.hasAuthority(readScope);
-			}
-			
-			if(!canRead) {
 				throw new NotFoundException("Did not find the CodeTable: "+codeTableName);
 			}
 			
@@ -286,17 +239,11 @@ public class CodeServiceImpl implements CodeService {
 			
 			applyModel(codeTable, dto);
 			
-			dao.update(codeTableConfig, dto, optimisticLock, webAdeAuthentication.getUserId());
+			dao.update(codeTableConfig, dto, optimisticLock, "UserId");
 
 			dto = dao.fetch(codeTableConfig, null);
-			
-			boolean canUpdate = false;
-			String updateScope = codeTableConfig.getUpdateScope();
-			if(updateScope!=null&&updateScope.trim().length()>0) {
-				canUpdate = webAdeAuthentication.hasAuthority(updateScope);
-			}
 
-			result = this.codeTableFactory.getCodeTable(dto, null, canUpdate, context);
+			result = this.codeTableFactory.getCodeTable(dto, null, true, context);
 
 		} catch (OptimisticLockingFailureDaoException e) {
 			throw new ConflictException(e.getMessage());
@@ -337,8 +284,7 @@ public class CodeServiceImpl implements CodeService {
 	public CodeHierarchyList<? extends CodeHierarchy> getCodeHierarchyList(
 			LocalDate effectiveAsOfDate, 
 			String codeHierarchyName, 
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException {
+			FactoryContext context) throws ServiceException {
 		logger.debug("<getCodeHierarchys");
 
 		CodeHierarchyList<? extends CodeHierarchy> results = null;
@@ -363,44 +309,7 @@ public class CodeServiceImpl implements CodeService {
 
 				if(codeHierarchyConfig!=null) {
 					
-					boolean canRead = true;
-					String readScope = codeHierarchyConfig.getReadScope();
-					if(readScope!=null&&readScope.trim().length()>0) {
-						canRead = webAdeAuthentication.hasAuthority(readScope);
-					}
-				
-					if(canRead) {
-					
-						try {
-							
-							CodeHierarchyDao dao = codeHierarchyConfig.getCodeHierarchyDao();
-							
-							if(dao==null) {
-								dao = this.codeHierarchyDao;
-							}
-							
-							if(dao==null) {
-								logger.error("No codeHierarchyDao has been configured for "+codeHierarchyConfig.getCodeHierarchyTableName()+".");
-							}
-							
-							dtos.add(dao.fetch(codeHierarchyConfig, effectiveAsOfDate));
-							
-						} catch(IllegalArgumentException e) {
-							// do nothing
-						}
-					}
-				}
-			} else {
-				
-				for(CodeHierarchyConfig codeHierarchyConfig:this.codeHierarchyConfigs) {
-					
-					boolean canRead = true;
-					String readScope = codeHierarchyConfig.getReadScope();
-					if(readScope!=null&&readScope.trim().length()>0) {
-						canRead = webAdeAuthentication.hasAuthority(readScope);
-					}
-					
-					if(canRead) {
+					try {
 						
 						CodeHierarchyDao dao = codeHierarchyConfig.getCodeHierarchyDao();
 						
@@ -413,7 +322,26 @@ public class CodeServiceImpl implements CodeService {
 						}
 						
 						dtos.add(dao.fetch(codeHierarchyConfig, effectiveAsOfDate));
+						
+					} catch(IllegalArgumentException e) {
+						// do nothing
 					}
+				}
+			} else {
+				
+				for(CodeHierarchyConfig codeHierarchyConfig:this.codeHierarchyConfigs) {
+					
+					CodeHierarchyDao dao = codeHierarchyConfig.getCodeHierarchyDao();
+					
+					if(dao==null) {
+						dao = this.codeHierarchyDao;
+					}
+					
+					if(dao==null) {
+						logger.error("No codeHierarchyDao has been configured for "+codeHierarchyConfig.getCodeHierarchyTableName()+".");
+					}
+					
+					dtos.add(dao.fetch(codeHierarchyConfig, effectiveAsOfDate));
 				}
 			}
 
@@ -433,8 +361,7 @@ public class CodeServiceImpl implements CodeService {
 	public CodeHierarchy getCodeHierarchy(
 			String codeHierarchyName, 
 			LocalDate effectiveAsOfDate, 
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext context)
 			throws ServiceException, ForbiddenException, NotFoundException {
 		logger.debug("<getCodeHierarchy");
 
@@ -458,16 +385,6 @@ public class CodeServiceImpl implements CodeService {
 				throw new NotFoundException("Did not find the CodeHierarchy: "+codeHierarchyName);
 			}
 			
-			boolean canRead = true;
-			String readScope = codeHierarchyConfig.getReadScope();
-			if(readScope!=null&&readScope.trim().length()>0) {
-				canRead = webAdeAuthentication.hasAuthority(readScope);
-			}
-			
-			if(!canRead) {
-				throw new NotFoundException("Did not find the CodeHierarchy: "+codeHierarchyName);
-			}
-			
 			CodeHierarchyDao dao = codeHierarchyConfig.getCodeHierarchyDao();
 			
 			if(dao==null) {
@@ -483,14 +400,8 @@ public class CodeServiceImpl implements CodeService {
 			if (dto == null) {
 				throw new NotFoundException("Did not find the CodeHierarchy: "+codeHierarchyName);
 			}
-			
-			boolean canUpdate = false;
-			String updateScope = codeHierarchyConfig.getUpdateScope();
-			if(updateScope!=null&&updateScope.trim().length()>0) {
-				canUpdate = webAdeAuthentication.hasAuthority(updateScope);
-			}
 
-			result = this.codeHierarchyFactory.getCodeHierarchy(dto, effectiveAsOfDate, canUpdate, context);
+			result = this.codeHierarchyFactory.getCodeHierarchy(dto, effectiveAsOfDate, true, context);
 			
 		} catch (DaoException e) {
 			
@@ -506,8 +417,7 @@ public class CodeServiceImpl implements CodeService {
 			String codeHierarchyName,
 			String optimisticLock,
 			CodeHierarchy codeHierarchy,
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext context)
 			throws ServiceException, NotFoundException, ForbiddenException, ConflictException, ValidationFailureException {
 		logger.debug("<updateCodeHierarchy");
 
@@ -528,16 +438,6 @@ public class CodeServiceImpl implements CodeService {
 			}
 			
 			if(codeHierarchyConfig==null) {
-				throw new NotFoundException("Did not find the CodeHierarchy: "+codeHierarchyName);
-			}
-			
-			boolean canRead = true;
-			String readScope = codeHierarchyConfig.getReadScope();
-			if(readScope!=null&&readScope.trim().length()>0) {
-				canRead = webAdeAuthentication.hasAuthority(readScope);
-			}
-			
-			if(!canRead) {
 				throw new NotFoundException("Did not find the CodeHierarchy: "+codeHierarchyName);
 			}
 			
@@ -566,17 +466,11 @@ public class CodeServiceImpl implements CodeService {
 			
 			applyModel(codeHierarchy, dto);
 			
-			dao.update(codeHierarchyConfig, dto, optimisticLock, webAdeAuthentication.getUserId());
+			dao.update(codeHierarchyConfig, dto, optimisticLock, "UserId");
 
 			dto = dao.fetch(codeHierarchyConfig, null);
-			
-			boolean canUpdate = false;
-			String updateScope = codeHierarchyConfig.getUpdateScope();
-			if(updateScope!=null&&updateScope.trim().length()>0) {
-				canUpdate = webAdeAuthentication.hasAuthority(updateScope);
-			}
 
-			result = this.codeHierarchyFactory.getCodeHierarchy(dto, null, canUpdate, context);
+			result = this.codeHierarchyFactory.getCodeHierarchy(dto, null, true, context);
 
 		} catch (OptimisticLockingFailureDaoException e) {
 			throw new ConflictException(e.getMessage());

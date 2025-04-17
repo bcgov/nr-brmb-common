@@ -55,7 +55,7 @@ public class CodeHierarchyListEndpointsImpl extends BaseEndpointsImpl implements
 						.entity(validationMessages).build();
 			} else {
 
-				CodeHierarchyListRsrc results = (CodeHierarchyListRsrc)service.getCodeHierarchyList(DateUtils.toLocalDate(effectiveAsOfDate), codeHierarchyName, getFactoryContext(), getWebAdeAuthentication());
+				CodeHierarchyListRsrc results = (CodeHierarchyListRsrc)service.getCodeHierarchyList(DateUtils.toLocalDate(effectiveAsOfDate), codeHierarchyName, getFactoryContext());
 	
 				GenericEntity<CodeHierarchyListRsrc> entity = new GenericEntity<CodeHierarchyListRsrc>(
 						results) {

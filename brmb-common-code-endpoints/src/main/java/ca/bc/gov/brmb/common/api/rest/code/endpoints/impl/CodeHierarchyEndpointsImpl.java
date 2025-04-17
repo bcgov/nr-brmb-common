@@ -59,7 +59,7 @@ public class CodeHierarchyEndpointsImpl extends BaseEndpointsImpl implements
 				response = Response.status(Status.BAD_REQUEST).entity(validationMessages).build();
 			} else {
 
-				CodeHierarchyRsrc result = (CodeHierarchyRsrc) service.getCodeHierarchy(codeHierarchyName, DateUtils.toLocalDate(effectiveAsOfDate), getFactoryContext(), getWebAdeAuthentication());
+				CodeHierarchyRsrc result = (CodeHierarchyRsrc) service.getCodeHierarchy(codeHierarchyName, DateUtils.toLocalDate(effectiveAsOfDate), getFactoryContext());
 	
 				response = Response.ok(result).tag(result.getUnquotedETag()).build();
 			}
@@ -89,7 +89,7 @@ public class CodeHierarchyEndpointsImpl extends BaseEndpointsImpl implements
 		logRequest();
 
 		try {
-			CodeHierarchyRsrc currentCodeHierarchy = (CodeHierarchyRsrc) this.service.getCodeHierarchy(codeHierarchyName, null, getFactoryContext(), getWebAdeAuthentication());
+			CodeHierarchyRsrc currentCodeHierarchy = (CodeHierarchyRsrc) this.service.getCodeHierarchy(codeHierarchyName, null, getFactoryContext());
 
 			EntityTag currentTag = EntityTag.valueOf(currentCodeHierarchy.getQuotedETag());
 
@@ -100,7 +100,7 @@ public class CodeHierarchyEndpointsImpl extends BaseEndpointsImpl implements
 
 				String optimisticLock = getIfMatchHeader();
 
-				CodeHierarchyRsrc result = (CodeHierarchyRsrc) service.updateCodeHierarchy(codeHierarchyName, optimisticLock, updatedCodeHierarchy, getFactoryContext(), getWebAdeAuthentication());
+				CodeHierarchyRsrc result = (CodeHierarchyRsrc) service.updateCodeHierarchy(codeHierarchyName, optimisticLock, updatedCodeHierarchy, getFactoryContext());
 
 				response = Response.ok(result).tag(result.getUnquotedETag()).build();
 				

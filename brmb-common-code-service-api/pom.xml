@@ -26,12 +26,6 @@
 			<artifactId>brmb-common-code-persistence</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-	
-		<dependency>
-			<groupId>ca.bc.gov.brmb.common</groupId>
-			<artifactId>brmb-common-webade</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework</groupId>

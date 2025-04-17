@@ -59,7 +59,7 @@ public class CodeTableEndpointsImpl extends BaseEndpointsImpl implements
 				response = Response.status(Status.BAD_REQUEST).entity(validationMessages).build();
 			} else {
 
-				CodeTableRsrc result = (CodeTableRsrc) service.getCodeTable(codeTableName, DateUtils.toLocalDate(effectiveAsOfDate), getFactoryContext(), getWebAdeAuthentication());
+				CodeTableRsrc result = (CodeTableRsrc) service.getCodeTable(codeTableName, DateUtils.toLocalDate(effectiveAsOfDate), getFactoryContext());
 	
 				response = Response.ok(result).tag(result.getUnquotedETag()).build();
 			}
@@ -89,7 +89,7 @@ public class CodeTableEndpointsImpl extends BaseEndpointsImpl implements
 		logRequest();
 
 		try {
-			CodeTableRsrc currentCodeTable = (CodeTableRsrc) this.service.getCodeTable(codeTableName, null, getFactoryContext(), getWebAdeAuthentication());
+			CodeTableRsrc currentCodeTable = (CodeTableRsrc) this.service.getCodeTable(codeTableName, null, getFactoryContext());
 
 			EntityTag currentTag = EntityTag.valueOf(currentCodeTable.getQuotedETag());
 
@@ -100,7 +100,7 @@ public class CodeTableEndpointsImpl extends BaseEndpointsImpl implements
 
 				String optimisticLock = getIfMatchHeader();
 
-				CodeTableRsrc result = (CodeTableRsrc) service.updateCodeTable(codeTableName, optimisticLock, updatedCodeTable, getFactoryContext(), getWebAdeAuthentication());
+				CodeTableRsrc result = (CodeTableRsrc) service.updateCodeTable(codeTableName, optimisticLock, updatedCodeTable, getFactoryContext());
 
 				response = Response.ok(result).tag(result.getUnquotedETag()).build();
 				

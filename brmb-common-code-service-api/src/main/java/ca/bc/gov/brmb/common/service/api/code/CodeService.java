@@ -15,7 +15,6 @@ import ca.bc.gov.brmb.common.service.api.NotFoundException;
 import ca.bc.gov.brmb.common.service.api.ServiceException;
 import ca.bc.gov.brmb.common.service.api.ValidationFailureException;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public interface CodeService {
 
@@ -23,15 +22,13 @@ public interface CodeService {
 	public CodeTableList<? extends CodeTable<? extends Code>> getCodeTableList(
 			LocalDate effectiveAsOfDate, 
 			String codeTableName,
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException;
+			FactoryContext context) throws ServiceException;
 
 	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
 	public CodeTable<? extends Code> getCodeTable(
 			String codeTableName, 
 			LocalDate effectiveAsOfDate, 
-			FactoryContext factoryContext, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext factoryContext)
 			throws ServiceException, ForbiddenException, NotFoundException;
 
 	@Transactional(transactionManager="transactionManager",readOnly = false, rollbackFor = Exception.class)
@@ -39,31 +36,27 @@ public interface CodeService {
 			String codeTableName, 
 			String optimisticLock, 
 			CodeTable<? extends Code> updatedCodeTable,
-			FactoryContext factoryContext, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException, NotFoundException,
+			FactoryContext factoryContext) throws ServiceException, NotFoundException,
 			ForbiddenException, ConflictException, ValidationFailureException;
 
 	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
 	public CodeHierarchyList<? extends CodeHierarchy> getCodeHierarchyList(
 			LocalDate effectiveAsOfDate,
 			String codeHierarchyName, 
-			FactoryContext context, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException;
+			FactoryContext context) throws ServiceException;
 
 	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
 	public CodeHierarchy getCodeHierarchy(
 			String codeHierarchyName, 
 			LocalDate effectiveAsOfDate,
-			FactoryContext factoryContext, 
-			WebAdeAuthentication webAdeAuthentication) throws ServiceException, ForbiddenException, NotFoundException;
+			FactoryContext factoryContext) throws ServiceException, ForbiddenException, NotFoundException;
 
 	@Transactional(transactionManager="transactionManager",readOnly = false, rollbackFor = Exception.class)
 	public CodeHierarchy updateCodeHierarchy(
 			String codeHierarchyName, 
 			String optimisticLock,
 			CodeHierarchy updatedCodeHierarchy, 
-			FactoryContext factoryContext, 
-			WebAdeAuthentication webAdeAuthentication)
+			FactoryContext factoryContext)
 			throws ServiceException, NotFoundException, ForbiddenException, ConflictException,
 			ValidationFailureException;
 

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
 
@@ -33,8 +32,6 @@ import javax.ws.rs.core.UriInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import ca.bc.gov.brmb.common.rest.resource.HeaderConstants;
 import ca.bc.gov.brmb.common.rest.resource.MessageListRsrc;
@@ -46,7 +43,6 @@ import ca.bc.gov.brmb.common.rest.endpoints.resource.factory.ResourceFactoryCont
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.brmb.common.utils.ByteUtils;
 import ca.bc.gov.brmb.common.utils.HttpServletRequestHolder;
-import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public abstract class BaseEndpointsImpl implements BaseEndpoints {
 
@@ -63,28 +59,6 @@ public abstract class BaseEndpointsImpl implements BaseEndpoints {
 	private HttpServletRequest httpServletRequest;
 	
 	private Request request;
-
-	protected final static boolean hasAuthority(String... authorityName) {
-		boolean result = false;
-		
-		List<String> authorityNames = Arrays.asList(authorityName);
-		
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			for (GrantedAuthority grantedAuthority : authentication
-					.getAuthorities()) {
-				
-				String authority = grantedAuthority.getAuthority();
-				
-				if (authorityNames.contains(authority)) {
-					result = true;
-					break;
-				}
-			}
-		}
-
-		return result;
-	}
 	
 	protected void logRequest() {
 		if(logger.isInfoEnabled()) {
@@ -93,11 +67,6 @@ public abstract class BaseEndpointsImpl implements BaseEndpoints {
 			String path = uri.getPath();
 			String query = uri.getQuery();
 			logger.info(method+" "+path+(query==null?"":"?"+query));
-			WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-			if(authentication!=null) {
-				Long organizationId = authentication.getOnBehalfOfOrganizationId();
-				logger.info("Authorized User:"+authentication.getUserTypeCode()+"/"+authentication.getUserGuid()+(organizationId==null?"":"@"+organizationId));
-			}
 		}
 	}
 	
@@ -173,109 +142,6 @@ public abstract class BaseEndpointsImpl implements BaseEndpoints {
 	protected Redirect getRedirect(URI uri) {
 		Redirect result = new Redirect();
 		result.getLinks().add(new RelLink(BaseResourceTypes.REDIRECT, uri.toString(), "GET"));
-		return result;
-	}
-	
-	protected final static String getCurrentApplicationCode() {
-		String result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getClientAppCode();
-		}
-
-		return result;
-	}
-
-	protected final static String getCurrentUserTypeCode() {
-		String result = null;
-		
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getUserTypeCode();
-		}
-
-		return result;
-	}
-
-	protected final static Long getOnBehalfOfOrganizationId() {
-		Long result = null;
-		
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getOnBehalfOfOrganizationId();
-		}
-
-		return result;
-	}
-
-	protected final static String getOnBehalfOfOrganizationCode() {
-		String result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getOnBehalfOfOrganizationCode();
-		}
-
-		return result;
-	}
-
-	protected final static String getOnBehalfOfOrganizationName() {
-		String result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getOnBehalfOfOrganizationName();
-		}
-
-		return result;
-	}
-
-	protected final static Map<String, String> getOnBehalfOfOrganizationAdditionalInfo() {
-		Map<String, String> result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getOnBehalfOfOrganizationAdditionalInfo();
-		}
-
-		return result;
-	}
-
-	protected final static String getCurrentUserId() {
-		String result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getUserId();
-		}
-
-		return result;
-	}
-
-	protected final static WebAdeAuthentication getWebAdeAuthentication() {
-		return (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-	}
-
-	protected final static String getCurrentUserGuid() {
-		String result = null;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getUserGuid();
-		}
-
-		return result;
-	}
-
-	protected final static boolean isCurrentUser(String userTypeCode, String userGuid) {
-		boolean result = false;
-
-		WebAdeAuthentication authentication = (WebAdeAuthentication) SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null) {
-			result = authentication.getUserTypeCode().equals(userTypeCode)&& authentication.getUserGuid().equals(userGuid);
-		}
-
 		return result;
 	}
 	
