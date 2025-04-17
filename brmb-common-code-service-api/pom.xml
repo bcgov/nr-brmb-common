@@ -29,7 +29,7 @@
 	
 		<dependency>
 			<groupId>ca.bc.gov.nrs.wfone.common</groupId>
-			<artifactId>wfone-common-webade</artifactId>
+			<artifactId>brmb-common-webade</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		

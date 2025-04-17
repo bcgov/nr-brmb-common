@@ -46,7 +46,7 @@ import ca.bc.gov.brmb.common.rest.endpoints.resource.factory.ResourceFactoryCont
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 import ca.bc.gov.brmb.common.utils.ByteUtils;
 import ca.bc.gov.brmb.common.utils.HttpServletRequestHolder;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public abstract class BaseEndpointsImpl implements BaseEndpoints {
 

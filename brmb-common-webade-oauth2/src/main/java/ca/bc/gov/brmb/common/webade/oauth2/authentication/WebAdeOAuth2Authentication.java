@@ -13,7 +13,7 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticatedPrincipal;
 import org.springframework.security.oauth2.server.resource.authentication.AbstractOAuth2TokenAuthenticationToken;
 import org.springframework.util.Assert;
 
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public class WebAdeOAuth2Authentication extends AbstractOAuth2TokenAuthenticationToken<OAuth2AccessToken> implements WebAdeAuthentication {
 

@@ -20,8 +20,8 @@
 		 <module>brmb-common-checkhealth</module>
 		 <module>brmb-common-rest-client</module>
 		 <module>brmb-common-http-utils</module>
-		 <module>wfone-common-webade</module>
-		 <module>wfone-common-webade-oauth2-test</module>
+		 <module>brmb-common-webade</module>
+		 <module>brmb-common-webade-oauth2-test</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

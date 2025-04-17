@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ca.bc.gov.brmb.common.model.Message;
 import ca.bc.gov.brmb.common.model.MessageImpl;
-import ca.bc.gov.brmb.common.utils.DateUtils;
 
 public class MessageBuilder {
 	

@@ -34,7 +34,7 @@ import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeHierarchyFactory
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeTableFactory;
 import ca.bc.gov.brmb.common.service.api.code.validation.CodeValidator;
 import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
-import ca.bc.gov.nrs.wfone.common.webade.authentication.WebAdeAuthentication;
+import ca.bc.gov.brmb.common.webade.authentication.WebAdeAuthentication;
 
 public class CodeServiceImpl implements CodeService {
 
