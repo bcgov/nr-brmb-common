@@ -180,15 +180,14 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 					+ ") values ("
 					+ "?,"
 					+ "?,"
-					+ "?,"
 					+ (Boolean.TRUE.equals(codeTableConfig.getUseDisplayOrder())?"?,":"")
-					+ (dto.getEffectiveDate()==null?"trunc(SYSDATE),":"?,")
+					+ (dto.getEffectiveDate()==null?"CURRENT_DATE,":"?,")
 					+ (dto.getExpiryDate()==null?"to_date('9999-12-31','YYYY-MM-DD'),":"?,")
-					+ (Boolean.TRUE.equals(codeTableConfig.getUseDisplayOrder())?"1,":"")
+					+ (Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"1,":"")
 					+ "?,"
-					+ "SYSDATE,"
+					+ "CURRENT_TIMESTAMP,"
 					+ "?,"
-					+ "SYSDATE"
+					+ "CURRENT_TIMESTAMP"
 					+ ")";
 		}
 
@@ -201,7 +200,9 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 			if(!Boolean.FALSE.equals(codeTableConfig.getUseDisplayOrder())) {
 				setInteger(++parameterIndex, st, dto.getDisplayOrder());
 			}
-			setLocalDate(++parameterIndex, st, dto.getEffectiveDate());
+			if(dto.getEffectiveDate()!=null) {
+				setLocalDate(++parameterIndex, st, dto.getEffectiveDate());
+			}
 			if(dto.getExpiryDate()!=null) {
 				setLocalDate(++parameterIndex, st, dto.getExpiryDate());
 			}
@@ -232,7 +233,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 					+ "EXPIRY_DATE = "+(dto.getExpiryDate()==null?"to_date('9999-12-31','YYYY-MM-DD')":"?")+", "
 					+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")
 					+"UPDATE_USER = ?, "
-					+ "UPDATE_TIMESTAMP = SYSDATE "
+					+ "UPDATE_DATE = CURRENT_TIMESTAMP "
 					+ "WHERE "+codeTableConfig.getCodeTableName()+" = ?";
 		
 		}
@@ -269,7 +270,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 		String expireSql = codeTableConfig.getExpireSql();
 		
 		if(expireSql==null||expireSql.trim().length()==0) {
-			expireSql = "UPDATE "+codeTableConfig.getCodeTableName()+" SET EXPIRY_DATE = trunc(SYSDATE), "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")+"UPDATE_USER = ?, UPDATE_TIMESTAMP = SYSDATE WHERE "+codeTableConfig.getCodeTableName()+" = ?";
+			expireSql = "UPDATE "+codeTableConfig.getCodeTableName()+" SET EXPIRY_DATE = CURRENT_DATE, "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")+"UPDATE_USER = ?, UPDATE_DATE = CURRENT_TIMESTAMP WHERE "+codeTableConfig.getCodeTableName()+" = ?";
 		
 		}
 

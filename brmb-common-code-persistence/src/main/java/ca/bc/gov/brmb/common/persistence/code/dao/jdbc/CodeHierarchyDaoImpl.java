@@ -225,13 +225,13 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 					+ (codeHierarchyConfig.getSkeySequenceName()==null?"sys_guid(),":codeHierarchyConfig.getSkeySequenceName()+".nextval,")
 					+ "?,"
 					+ "?,"
-					+ (dto.getEffectiveDate()==null?"trunc(SYSDATE),":"?,")
+					+ (dto.getEffectiveDate()==null?"CURRENT_DATE,":"?,")
 					+ (dto.getExpiryDate()==null?"to_date('9999-12-31','YYYY-MM-DD'),":"?,")
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"1,":"")
 					+ "?,"
-					+ "SYSDATE,"
+					+ "CURRENT_TIMESTAMP,"
 					+ "?,"
-					+ "SYSDATE"
+					+ "CURRENT_TIMESTAMP"
 					+ ")";
 		}
 
@@ -271,7 +271,7 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 					+ "EXPIRY_DATE = "+(dto.getExpiryDate()==null?"to_date('9999-12-31','YYYY-MM-DD')":"?")+","
 					+ "UPDATE_USER = ?,"
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1,":"")
-					+ "UPDATE_DATE = SYSDATE "
+					+ "UPDATE_DATE = CURRENT_TIMESTAMP "
 					+ "WHERE "+codeHierarchyConfig.getUpperCodeColumnName()+" = ?"
 					+ "  AND "+codeHierarchyConfig.getLowerCodeColumnName()+" = ?";
 		}
@@ -307,10 +307,10 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 		if(expireSql==null||expireSql.trim().length()==0) {
 			
 			expireSql = "update "+codeHierarchyConfig.getCodeHierarchyTableName()+" set "
-					+ "EXPIRY_DATE = trunc(SYSDATE),"
+					+ "EXPIRY_DATE = CURRENT_DATE,"
 					+ "UPDATE_USER = ?,"
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1,":"")
-					+ "UPDATE_DATE = SYSDATE "
+					+ "UPDATE_DATE = CURRENT_TIMESTAMP "
 					+ "WHERE "+codeHierarchyConfig.getUpperCodeColumnName()+" = ?"
 					+ "  AND "+codeHierarchyConfig.getLowerCodeColumnName()+" = ?";
 		}
