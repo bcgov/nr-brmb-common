@@ -25,6 +25,16 @@
 		<source.version>17</source.version>
 		<target.version>17</target.version>
 	</properties>
+    <distributionManagement>
+        <repository>
+            <id>openshift-releases</id>
+            <url>${RELEASE_URL}</url>
+        </repository>
+        <snapshotRepository>
+            <id>openshift-snapshots</id>
+            <url>${SNAPSHOT_URL}</url>
+        </snapshotRepository>
+    </distributionManagement>
 	<dependencyManagement>
 		<dependencies>	
 		

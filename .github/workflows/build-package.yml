@@ -9,7 +9,7 @@ on:
       JAVA_VERSION:
         required: false
         type: string
-        default: "8"
+        default: "17"
   workflow_call:
     inputs:
       ENVIRONMENT:
@@ -18,7 +18,7 @@ on:
       JAVA_VERSION:
         required: false
         type: string
-        default: "8"
+        default: "17"
 
 jobs:
   build:

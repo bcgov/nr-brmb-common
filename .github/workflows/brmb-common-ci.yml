@@ -13,3 +13,4 @@ jobs:
     secrets: inherit
     with:
       ENVIRONMENT: DEV
+      JAVA_VERSION: 17
