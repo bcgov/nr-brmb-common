@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import ca.bc.gov.brmb.common.rest.resource.BaseResource;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJAXBAdapter;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJacksonDeserializer;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJacksonSerializer;
@@ -21,68 +22,68 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @XmlRootElement(namespace = BaseResourceTypes.COMMON_NAMESPACE, name = BaseResourceTypes.CODE_NAME)
 @JsonSubTypes({ @Type(value = CodeRsrc.class, name = BaseResourceTypes.CODE) })
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
-public class CodeRsrc implements Code {
-	private static final long serialVersionUID = 1L;
+public class CodeRsrc extends BaseResource implements Code {
+    private static final long serialVersionUID = 1L;
 
-	private String code;
+    private String code;
 
-	private String description;
+    private String description;
 
-	private Integer displayOrder;
+    private Integer displayOrder;
 
-	private LocalDate effectiveDate;
+    private LocalDate effectiveDate;
 
-	private LocalDate expiryDate;
+    private LocalDate expiryDate;
 
-	public CodeRsrc() {
-		super();
-	}
+    public CodeRsrc() {
+        super();
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public Integer getDisplayOrder() {
-		return displayOrder;
-	}
+    public Integer getDisplayOrder() {
+        return displayOrder;
+    }
 
-	public void setDisplayOrder(Integer displayOrder) {
-		this.displayOrder = displayOrder;
-	}
-	
-	@JsonSerialize(using = LocalDateJacksonSerializer.class)
-	@JsonDeserialize(using = LocalDateJacksonDeserializer.class)
-	@XmlJavaTypeAdapter(LocalDateJAXBAdapter.class)
-	@Schema(type="string")
-	public LocalDate getEffectiveDate() {
-		return effectiveDate;
-	}
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
+    }
 
-	public void setEffectiveDate(LocalDate effectiveDate) {
-		this.effectiveDate = effectiveDate;
-	}
-	
-	@JsonSerialize(using = LocalDateJacksonSerializer.class)
-	@JsonDeserialize(using = LocalDateJacksonDeserializer.class)
-	@XmlJavaTypeAdapter(LocalDateJAXBAdapter.class)
-	@Schema(type="string")
-	public LocalDate getExpiryDate() {
-		return expiryDate;
-	}
+    @JsonSerialize(using = LocalDateJacksonSerializer.class)
+    @JsonDeserialize(using = LocalDateJacksonDeserializer.class)
+    @XmlJavaTypeAdapter(LocalDateJAXBAdapter.class)
+    @Schema(type = "string")
+    public LocalDate getEffectiveDate() {
+        return effectiveDate;
+    }
 
-	public void setExpiryDate(LocalDate expiryDate) {
-		this.expiryDate = expiryDate;
-	}
+    public void setEffectiveDate(LocalDate effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+    @JsonSerialize(using = LocalDateJacksonSerializer.class)
+    @JsonDeserialize(using = LocalDateJacksonDeserializer.class)
+    @XmlJavaTypeAdapter(LocalDateJAXBAdapter.class)
+    @Schema(type = "string")
+    public LocalDate getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
+    }
 }

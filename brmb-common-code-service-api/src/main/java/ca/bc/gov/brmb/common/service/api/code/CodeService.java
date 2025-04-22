@@ -18,46 +18,77 @@ import ca.bc.gov.brmb.common.service.api.model.factory.FactoryContext;
 
 public interface CodeService {
 
-	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
-	public CodeTableList<? extends CodeTable<? extends Code>> getCodeTableList(
-			LocalDate effectiveAsOfDate, 
-			String codeTableName,
-			FactoryContext context) throws ServiceException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public Code getCode(
+            String codeTableName,
+            String codeName,
+            FactoryContext factoryContext)
+            throws ServiceException, NotFoundException;
 
-	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
-	public CodeTable<? extends Code> getCodeTable(
-			String codeTableName, 
-			LocalDate effectiveAsOfDate, 
-			FactoryContext factoryContext)
-			throws ServiceException, ForbiddenException, NotFoundException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public Code createCode(
+            String codeTableName,
+            String optimisticLock,
+            Code code,
+            FactoryContext factoryContext)
+            throws ServiceException, NotFoundException, ConflictException;
 
-	@Transactional(transactionManager="transactionManager",readOnly = false, rollbackFor = Exception.class)
-	public CodeTable<? extends Code> updateCodeTable(
-			String codeTableName, 
-			String optimisticLock, 
-			CodeTable<? extends Code> updatedCodeTable,
-			FactoryContext factoryContext) throws ServiceException, NotFoundException,
-			ForbiddenException, ConflictException, ValidationFailureException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public void deleteCode(
+            String codeTableName,
+            String optimisticLock,
+            String codeName,
+            FactoryContext factoryContext)
+            throws ServiceException, NotFoundException, ConflictException;
 
-	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
-	public CodeHierarchyList<? extends CodeHierarchy> getCodeHierarchyList(
-			LocalDate effectiveAsOfDate,
-			String codeHierarchyName, 
-			FactoryContext context) throws ServiceException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public Code updateCode(
+            String codeTableName,
+            String optimisticLock,
+            Code code,
+            FactoryContext factoryContext)
+            throws ServiceException, NotFoundException, ConflictException;
 
-	@Transactional(transactionManager="transactionManager", readOnly = true, rollbackFor = Exception.class)
-	public CodeHierarchy getCodeHierarchy(
-			String codeHierarchyName, 
-			LocalDate effectiveAsOfDate,
-			FactoryContext factoryContext) throws ServiceException, ForbiddenException, NotFoundException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public CodeTableList<? extends CodeTable<? extends Code>> getCodeTableList(
+            LocalDate effectiveAsOfDate,
+            String codeTableName,
+            FactoryContext context) throws ServiceException;
 
-	@Transactional(transactionManager="transactionManager",readOnly = false, rollbackFor = Exception.class)
-	public CodeHierarchy updateCodeHierarchy(
-			String codeHierarchyName, 
-			String optimisticLock,
-			CodeHierarchy updatedCodeHierarchy, 
-			FactoryContext factoryContext)
-			throws ServiceException, NotFoundException, ForbiddenException, ConflictException,
-			ValidationFailureException;
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public CodeTable<? extends Code> getCodeTable(
+            String codeTableName,
+            LocalDate effectiveAsOfDate,
+            FactoryContext factoryContext)
+            throws ServiceException, ForbiddenException, NotFoundException;
+
+    @Transactional(transactionManager = "transactionManager", readOnly = false, rollbackFor = Exception.class)
+    public CodeTable<? extends Code> updateCodeTable(
+            String codeTableName,
+            String optimisticLock,
+            CodeTable<? extends Code> updatedCodeTable,
+            FactoryContext factoryContext) throws ServiceException, NotFoundException,
+            ForbiddenException, ConflictException, ValidationFailureException;
+
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public CodeHierarchyList<? extends CodeHierarchy> getCodeHierarchyList(
+            LocalDate effectiveAsOfDate,
+            String codeHierarchyName,
+            FactoryContext context) throws ServiceException;
+
+    @Transactional(transactionManager = "transactionManager", readOnly = true, rollbackFor = Exception.class)
+    public CodeHierarchy getCodeHierarchy(
+            String codeHierarchyName,
+            LocalDate effectiveAsOfDate,
+            FactoryContext factoryContext) throws ServiceException, ForbiddenException, NotFoundException;
+
+    @Transactional(transactionManager = "transactionManager", readOnly = false, rollbackFor = Exception.class)
+    public CodeHierarchy updateCodeHierarchy(
+            String codeHierarchyName,
+            String optimisticLock,
+            CodeHierarchy updatedCodeHierarchy,
+            FactoryContext factoryContext)
+            throws ServiceException, NotFoundException, ForbiddenException, ConflictException,
+            ValidationFailureException;
 
 }
