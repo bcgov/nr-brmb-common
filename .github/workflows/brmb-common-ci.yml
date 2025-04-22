@@ -1,0 +1,15 @@
+name: brmb-common CI build
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - '**.java'
+
+jobs:
+  build-brmb-common:
+    uses: ./.github/workflows/build-package.yml
+    secrets: inherit
+    with:
+      ENVIRONMENT: DEV

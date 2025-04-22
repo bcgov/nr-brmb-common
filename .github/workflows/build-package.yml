@@ -1,0 +1,51 @@
+name: build package
+
+on:
+  workflow_dispatch:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      JAVA_VERSION:
+        required: false
+        type: string
+        default: "8"
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      JAVA_VERSION:
+        required: false
+        type: string
+        default: "8"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.ENVIRONMENT }}
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract version number
+        id: getVersion
+        run: echo "VERSION_NUMBER=$(grep -Po -m 1 '(?<=<version>)[0-9\.]+(-SNAPSHOT)?'  pom.xml )" >> $GITHUB_OUTPUT
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ inputs.JAVA_VERSION }}
+          distribution: 'adopt'
+
+      - name: Build with Maven and push to artifactory
+        run: |
+          export MAVEN_OPTS="-Xmx3072m -XX:MaxMetaspaceSize=512m"
+          export NODE_OPTIONS="--max-old-space-size=4096"
+          export RELEASE_URL=${{ vars.RELEASE_URL }}
+          export SNAPSHOT_URL=${{ vars.SNAPSHOT_URL }}
+          mvn --settings=settings.xml --batch-mode --update-snapshots -f pom.xml -Drepo.login=${{ secrets.IDIR_AS_EMAIL }} -Drepo.password=${{ secrets.IDIR_PASSWORD }}  -DopenshiftRepo.login=${{ secrets.OPENSHIFT_ACCOUNT }} -DopenshiftRepo.password=${{ secrets.OPENSHIFT_PASSWORD }} deploy
