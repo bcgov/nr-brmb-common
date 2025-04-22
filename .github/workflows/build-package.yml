@@ -10,6 +10,15 @@ on:
         required: false
         type: string
         default: "8"
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      JAVA_VERSION:
+        required: false
+        type: string
+        default: "8"
 
 jobs:
   build:
