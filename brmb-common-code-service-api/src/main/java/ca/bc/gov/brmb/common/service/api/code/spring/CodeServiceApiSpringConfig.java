@@ -3,6 +3,7 @@ package ca.bc.gov.brmb.common.service.api.code.spring;
 import java.util.List;
 
 import ca.bc.gov.brmb.common.persistence.code.dao.CodeHierarchyConfig;
+import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeFactory;
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeHierarchyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,7 @@ public class CodeServiceApiSpringConfig {
 
 	// Beans provided by EndpointsSpringConfig
 	@Autowired ResourceBundleMessageSource messageSource;
+	@Autowired CodeFactory codeFactory;
 	@Autowired CodeTableFactory codeTableFactory;
 	@Autowired CodeHierarchyFactory codeHierarchyFactory;
 	
@@ -44,6 +46,7 @@ public class CodeServiceApiSpringConfig {
 		
 		result = new CodeServiceImpl();
 		result.setCodeValidator(codeValidator());
+		result.setCodeFactory(codeFactory);
 		result.setCodeTableFactory(codeTableFactory);
 		result.setCodeTableConfigs(codeTableConfigs);
 		result.setCodeHierarchyFactory(codeHierarchyFactory);

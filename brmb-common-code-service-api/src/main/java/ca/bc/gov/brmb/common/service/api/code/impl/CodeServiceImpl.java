@@ -791,6 +791,10 @@ public class CodeServiceImpl implements CodeService {
         this.codeHierarchyDao = codeHierarchyDao;
     }
 
+    public void setCodeFactory(CodeFactory codeFactory) {
+        this.codeFactory = codeFactory;
+    }
+
     public void setCodeTableFactory(CodeTableFactory codeTableFactory) {
         this.codeTableFactory = codeTableFactory;
     }
