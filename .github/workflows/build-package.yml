@@ -5,7 +5,13 @@ on:
     inputs:
       ENVIRONMENT:
         required: true
-        type: string
+        type: choice
+        options:
+          - DEV
+          - QA
+          - DLVR
+          - TEST
+          - PROD
       JAVA_VERSION:
         required: false
         type: string
