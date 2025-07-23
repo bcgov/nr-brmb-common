@@ -2,8 +2,8 @@ package ca.bc.gov.brmb.common.rest.resource;
 
 import java.time.LocalDate;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import ca.bc.gov.brmb.common.rest.resource.BaseResource;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJAXBAdapter;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJacksonDeserializer;
 import ca.bc.gov.brmb.common.rest.resource.transformers.LocalDateJacksonSerializer;

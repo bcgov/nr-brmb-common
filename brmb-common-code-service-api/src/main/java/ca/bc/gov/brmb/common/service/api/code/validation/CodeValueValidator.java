@@ -2,8 +2,8 @@ package ca.bc.gov.brmb.common.service.api.code.validation;
 
 import java.time.LocalDate;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

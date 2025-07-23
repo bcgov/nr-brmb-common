@@ -30,7 +30,7 @@
 		
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
-            <artifactId>swagger-annotations</artifactId>
+            <artifactId>swagger-annotations-jakarta</artifactId>
         </dependency>
 		
         <!-- API, java.xml.bind module -->

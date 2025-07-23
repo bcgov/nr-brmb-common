@@ -43,7 +43,7 @@
 		
 		<dependency>
 		    <groupId>io.swagger.core.v3</groupId>
-		    <artifactId>swagger-annotations</artifactId>
+		    <artifactId>swagger-annotations-jakarta</artifactId>
 		</dependency>
 		<dependency>
 		    <groupId>io.swagger.core.v3</groupId>
@@ -51,7 +51,7 @@
 		</dependency>
 	    <dependency>
 	      <groupId>io.swagger.core.v3</groupId>
-	      <artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>
+	      <artifactId>swagger-jaxrs2-servlet-initializer-v2-jakarta</artifactId>
 	    </dependency>
 
 		<dependency>
@@ -59,10 +59,15 @@
 			<artifactId>spring-beans</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
@@ -76,7 +81,7 @@
 		</dependency>
 		<dependency>
 		    <groupId>org.glassfish.jersey.ext</groupId>
-		    <artifactId>jersey-spring5</artifactId>
+		    <artifactId>jersey-spring6</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>

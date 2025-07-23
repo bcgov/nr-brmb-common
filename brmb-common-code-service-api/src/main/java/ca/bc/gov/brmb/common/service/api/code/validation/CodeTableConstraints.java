@@ -1,6 +1,6 @@
 package ca.bc.gov.brmb.common.service.api.code.validation;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 import ca.bc.gov.brmb.common.model.Code;
 import ca.bc.gov.brmb.common.model.CodeTable;

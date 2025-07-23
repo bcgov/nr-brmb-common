@@ -41,13 +41,13 @@
 			<dependency>
 				<groupId>jakarta.xml.bind</groupId>
 				<artifactId>jakarta.xml.bind-api</artifactId>
-				<version>2.3.2</version>
+				<version>4.0.2</version>
 			</dependency>
 	
 			<dependency>
 				<groupId>org.glassfish.jaxb</groupId>
 				<artifactId>jaxb-runtime</artifactId>
-				<version>2.3.2</version>
+				<version>4.0.5</version>
 			</dependency>
 		
 			<!-- MyBatis -->
@@ -66,27 +66,27 @@
 			<dependency>
 				<groupId>org.glassfish.jersey.core</groupId>
 				<artifactId>jersey-common</artifactId>
-				<version>2.31</version>
+				<version>3.1.10</version>
 			</dependency>
 			<dependency>
 			    <groupId>org.glassfish.jersey.containers</groupId>
 			    <artifactId>jersey-container-servlet</artifactId>
-			    <version>2.31</version>
+			    <version>3.1.10</version>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jersey.media</groupId>
 				<artifactId>jersey-media-json-jackson</artifactId>
-				<version>2.31</version>
+				<version>3.1.10</version>
 			</dependency>
 			<dependency>
 			    <groupId>org.glassfish.jersey.ext</groupId>
-			    <artifactId>jersey-spring5</artifactId>
-			    <version>2.31</version>
+			    <artifactId>jersey-spring6</artifactId>
+			    <version>3.1.10</version>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jersey.media</groupId>
 				<artifactId>jersey-media-multipart</artifactId>
-			    <version>2.31</version>
+			    <version>3.1.10</version>
 			</dependency>	
 
 			<!-- ORACLE database driver -->
@@ -111,18 +111,18 @@
 			<!-- Swagger -->
 			<dependency>
 			    <groupId>io.swagger.core.v3</groupId>
-			    <artifactId>swagger-annotations</artifactId>
-			    <version>2.1.2</version>
+			    <artifactId>swagger-annotations-jakarta</artifactId>
+			    <version>2.2.34</version>
 			</dependency>
 			<dependency>
 			    <groupId>io.swagger.core.v3</groupId>
 			    <artifactId>swagger-jaxrs2</artifactId>
-			    <version>2.1.2</version>
+			    <version>2.2.34</version>
 			</dependency>
 		    <dependency>
 		      <groupId>io.swagger.core.v3</groupId>
-		      <artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>
-		      <version>2.1.2</version>
+		      <artifactId>swagger-jaxrs2-servlet-initializer-v2-jakarta</artifactId>
+		      <version>2.2.34</version>
 		    </dependency>
 	 
 			<dependency>
@@ -142,7 +142,7 @@
 			<dependency>
 			    <groupId>org.hibernate.validator</groupId>
 			    <artifactId>hibernate-validator</artifactId>
-			    <version>6.1.5.Final</version>
+			    <version>8.0.2.Final</version>
 			</dependency>
 
 			<dependency>
@@ -155,74 +155,74 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>	
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 		    <dependency>
 		        <groupId>org.springframework</groupId>
 		        <artifactId>spring-test</artifactId>
-		        <version>5.3.26</version>
+		        <version>6.2.7</version>
 		    </dependency>	
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc-portlet</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-expression</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webflux</artifactId>
-				<version>5.3.26</version>
+				<version>6.2.7</version>
 			</dependency>
 				
 			<!-- Spring Security -->
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-core</artifactId>
-				<version>5.7.2</version>
+				<version>6.5.0</version>
 			</dependency>		
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-web</artifactId>
-				<version>5.7.2</version>
+				<version>6.5.0</version>
 			</dependency>
 			<dependency>
 			    <groupId>org.springframework.security</groupId>
 			    <artifactId>spring-security-oauth2-client</artifactId>
-				<version>5.7.2</version>
+				<version>6.5.0</version>
 			</dependency>
 			<dependency>
 			    <groupId>org.springframework.security</groupId>
 			    <artifactId>spring-security-oauth2-resource-server</artifactId>
-			    <version>5.7.2</version>
+			    <version>6.5.0</version>
 			</dependency>
 			
 			<!-- Spring Security OAuth -->
@@ -233,16 +233,16 @@
 			</dependency>
 
 			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>javax.servlet-api</artifactId>
-			    <version>3.1.0</version>
+			    <groupId>jakarta.servlet</groupId>
+			    <artifactId>jakarta.servlet-api</artifactId>
+			    <version>6.1.0</version>
 			</dependency>
 
 			<!-- Expression Language -->
 			<dependency>
-				<groupId>javax.el</groupId>
-				<artifactId>javax.el-api</artifactId>
-				<version>3.0.0</version>
+				<groupId>jakarta.el</groupId>
+				<artifactId>jakarta.el-api</artifactId>
+				<version>6.0.1</version>
 			</dependency>
 
 			<!-- Logging -->

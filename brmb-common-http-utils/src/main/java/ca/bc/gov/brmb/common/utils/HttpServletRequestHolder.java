@@ -1,6 +1,6 @@
 package ca.bc.gov.brmb.common.utils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class HttpServletRequestHolder {
 	

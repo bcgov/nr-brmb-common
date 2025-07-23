@@ -1,14 +1,9 @@
 package ca.bc.gov.brmb.common.utils;
 
-import java.util.Enumeration;
 import java.util.Properties;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.layout.PatternLayout;
-import org.apache.logging.log4j.core.Appender;
-import org.apache.logging.log4j.core.appender.RollingFileAppender;
 
 /**
  * There is no way to programmatically change SLF4J root log levels at runtime,
