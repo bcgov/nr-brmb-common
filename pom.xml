@@ -22,8 +22,8 @@
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<source.version>17</source.version>
-		<target.version>17</target.version>
+		<source.version>21</source.version>
+		<target.version>21</target.version>
 	</properties>
     <distributionManagement>
         <repository>
