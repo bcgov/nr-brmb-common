@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>ca.bc.gov.brmb.common</groupId>
 		<artifactId>brmb-common-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>brmb-common-utils</artifactId>
 	<name>brmb-common-utils</name>
