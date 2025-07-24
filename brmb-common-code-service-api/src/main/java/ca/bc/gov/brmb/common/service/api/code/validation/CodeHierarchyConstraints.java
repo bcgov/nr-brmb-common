@@ -1,6 +1,6 @@
 package ca.bc.gov.brmb.common.service.api.code.validation;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 public interface CodeHierarchyConstraints {
 

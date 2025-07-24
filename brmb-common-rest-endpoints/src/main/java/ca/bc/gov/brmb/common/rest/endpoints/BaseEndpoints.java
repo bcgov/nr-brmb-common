@@ -1,9 +1,9 @@
 package ca.bc.gov.brmb.common.rest.endpoints;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.Request;
-import javax.ws.rs.core.UriInfo;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Request;
+import jakarta.ws.rs.core.UriInfo;
 
 public interface BaseEndpoints {
 	

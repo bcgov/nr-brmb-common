@@ -3,7 +3,7 @@ package ca.bc.gov.brmb.common.api.rest.code.endpoints.jersey;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import javax.ws.rs.NameBinding;
+import jakarta.ws.rs.NameBinding;
 
 /**
  * Enable GZip compression

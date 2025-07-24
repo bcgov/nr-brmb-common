@@ -2,6 +2,7 @@ package ca.bc.gov.brmb.common.rest.client;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Map;
@@ -84,7 +85,7 @@ public class SpringByteArrayRestDAO extends ByteArrayRestDAO {
 		
 		try {
 		
-		URL url = new URL(urlString);
+		URL url = URI.create(urlString).toURL();
 		
 		String queryString = url.getQuery();
 		logger.debug("query="+queryString);
@@ -100,7 +101,7 @@ public class SpringByteArrayRestDAO extends ByteArrayRestDAO {
 		
 		logger.debug("urlString="+urlString);
 		
-		url = new URL(urlString);
+		url = URI.create(urlString).toURL();
 
 			HttpHeaders requestHeaders = new HttpHeaders();
 			
@@ -176,7 +177,7 @@ public class SpringByteArrayRestDAO extends ByteArrayRestDAO {
 			
 			ResponseEntity<byte[]> responseEntity = clientResponse.toEntity(byte[].class).block();
 			
-			HttpStatus statusCode = responseEntity.getStatusCode();
+			HttpStatus statusCode = (HttpStatus) responseEntity.getStatusCode();
 			logger.info("Rest call response: "+statusCode.value()+":"+statusCode.getReasonPhrase());
 			
 			HttpHeaders responseHeaders = responseEntity.getHeaders();

@@ -2,7 +2,7 @@ package ca.bc.gov.brmb.common.api.rest.code.resource.factory;
 
 import java.net.URI;
 
-import javax.ws.rs.core.UriBuilder;
+import jakarta.ws.rs.core.UriBuilder;
 
 import ca.bc.gov.brmb.common.rest.resource.CodeRsrc;
 import ca.bc.gov.brmb.common.rest.resource.RelLink;

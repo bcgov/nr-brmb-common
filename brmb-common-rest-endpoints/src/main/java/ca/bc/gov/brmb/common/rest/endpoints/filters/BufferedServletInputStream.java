@@ -2,8 +2,8 @@ package ca.bc.gov.brmb.common.rest.endpoints.filters;
 
 import java.io.ByteArrayInputStream;
 
-import javax.servlet.ReadListener;
-import javax.servlet.ServletInputStream;
+import jakarta.servlet.ReadListener;
+import jakarta.servlet.ServletInputStream;
 
 public class BufferedServletInputStream extends ServletInputStream {
 

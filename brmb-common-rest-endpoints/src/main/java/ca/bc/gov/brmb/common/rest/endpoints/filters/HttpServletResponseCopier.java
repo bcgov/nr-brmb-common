@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponseWrapper;
 
 public class HttpServletResponseCopier extends HttpServletResponseWrapper {
 
@@ -36,13 +36,6 @@ public class HttpServletResponseCopier extends HttpServletResponseWrapper {
 	public void setStatus(int sc) {
 		httpStatus = sc;
 		super.setStatus(sc);
-	}
-
-	@SuppressWarnings("deprecation")
-	@Override
-	public void setStatus(int sc, String msg) {
-		httpStatus = sc;
-		super.setStatus(sc, msg);
 	}
 
 	@Override

@@ -2,7 +2,7 @@ package ca.bc.gov.brmb.common.rest.resource.transformers;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

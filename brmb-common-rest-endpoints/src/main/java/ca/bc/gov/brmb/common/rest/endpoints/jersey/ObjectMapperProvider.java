@@ -1,6 +1,6 @@
 package ca.bc.gov.brmb.common.rest.endpoints.jersey;
 
-import javax.ws.rs.ext.ContextResolver;
+import jakarta.ws.rs.ext.ContextResolver;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

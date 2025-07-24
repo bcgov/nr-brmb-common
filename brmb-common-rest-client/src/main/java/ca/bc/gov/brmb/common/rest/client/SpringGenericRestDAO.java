@@ -10,10 +10,6 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.core.io.buffer.DataBufferUtils;
-import org.springframework.core.io.buffer.DefaultDataBufferFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -39,7 +35,6 @@ import ca.bc.gov.brmb.common.rest.resource.types.BaseResourceTypes;
 import ca.bc.gov.brmb.common.rest.client.factory.MessageListFactory;
 import ca.bc.gov.brmb.common.rest.client.factory.RedirectFactory;
 import ca.bc.gov.brmb.common.rest.client.factory.ResourceFactory;
-import reactor.core.publisher.Flux;
 
 public class SpringGenericRestDAO<T> extends GenericRestDAO<T> {
 	
@@ -303,7 +298,7 @@ public class SpringGenericRestDAO<T> extends GenericRestDAO<T> {
 			
 			ResponseEntity<byte[]> responseEntity = clientResponse.toEntity(byte[].class).block();
 			
-			HttpStatus statusCode = responseEntity.getStatusCode();
+			HttpStatus statusCode = (HttpStatus) responseEntity.getStatusCode();
 			logger.info("Rest call response: "+statusCode.value()+":"+statusCode.getReasonPhrase());
 			
 			HttpHeaders responseHeaders = responseEntity.getHeaders();
