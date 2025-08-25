@@ -34,6 +34,8 @@ public class CodeRsrc extends BaseResource implements Code {
 
     private LocalDate expiryDate;
 
+    private String userEmail;
+
     public CodeRsrc() {
         super();
     }
@@ -84,5 +86,13 @@ public class CodeRsrc extends BaseResource implements Code {
 
     public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

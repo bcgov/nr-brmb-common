@@ -38,6 +38,7 @@ public interface CodeService {
             String codeTableName,
             String optimisticLock,
             String codeName,
+            String userEmail,
             FactoryContext factoryContext)
             throws ServiceException, NotFoundException, ConflictException;
 
