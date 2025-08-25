@@ -3,6 +3,7 @@ package ca.bc.gov.brmb.common.persistence.code.dao;
 public class CodeTableConfig {
 
 	private String codeTableName;
+	private String codeCodeName;
 	private String readScope;
 	private String updateScope;
 	private Boolean useRevisionCount = Boolean.TRUE;
@@ -19,6 +20,14 @@ public class CodeTableConfig {
 
 	public void setCodeTableName(String codeTableName) {
 		this.codeTableName = codeTableName;
+	}
+
+	public String getCodeCodeName() {
+		return codeCodeName;
+	}
+
+	public void setCodeCodeName(String codeCodeName) {
+		this.codeCodeName = codeCodeName;
 	}
 
 	public String getReadScope() {
