@@ -114,7 +114,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 		String fetchSql = codeTableConfig.getFetchSql();
 		
 		if(fetchSql==null||fetchSql.trim().length()==0) {
-			fetchSql = "SELECT "+codeTableConfig.getCodeTableName()+" CODE, DESCRIPTION, "+(Boolean.TRUE.equals(codeTableConfig.getUseDisplayOrder())?"DISPLAY_ORDER, ":"row_number() OVER (ORDER BY DESCRIPTION) DISPLAY_ORDER, ")+"ESTABLISHED_DATE, EXPIRY_DATE, "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT, ":"")+"WHO_CREATED, WHEN_CREATED, WHO_UPDATED, WHEN_UPDATED from "+codeTableConfig.getCodeTableName();
+			fetchSql = "SELECT "+codeTableConfig.getCodeCodeName()+" CODE, DESCRIPTION, "+(Boolean.TRUE.equals(codeTableConfig.getUseDisplayOrder())?"DISPLAY_ORDER, ":"row_number() OVER (ORDER BY DESCRIPTION) DISPLAY_ORDER, ")+"ESTABLISHED_DATE, EXPIRY_DATE, "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT, ":"")+"WHO_CREATED, WHEN_CREATED, WHO_UPDATED, WHEN_UPDATED from "+codeTableConfig.getCodeTableName();
 		}
 
 		fetchSql = "select * from ("+fetchSql+") t "+(effectiveAsOfDate==null?"":"WHERE ? BETWEEN ESTABLISHED_DATE AND EXPIRY_DATE");
@@ -167,7 +167,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 		if(insertSql==null||insertSql.trim().length()==0) {
 			
 			insertSql = "insert into "+codeTableConfig.getCodeTableName()+" ("
-					+ codeTableConfig.getCodeTableName()+", "
+					+ codeTableConfig.getCodeCodeName()+", "
 					+ "DESCRIPTION, "
 					+ (Boolean.TRUE.equals(codeTableConfig.getUseDisplayOrder())?"DISPLAY_ORDER, ":"")
 					+ "ESTABLISHED_DATE, "
@@ -234,7 +234,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 					+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")
 					+"WHO_UPDATED = ?, "
 					+ "WHEN_UPDATED = CURRENT_TIMESTAMP "
-					+ "WHERE "+codeTableConfig.getCodeTableName()+" = ?";
+					+ "WHERE "+codeTableConfig.getCodeCodeName()+" = ?";
 		
 		}
 
@@ -270,7 +270,7 @@ public class CodeTableDaoImpl extends BaseDao implements CodeTableDao {
 		String expireSql = codeTableConfig.getExpireSql();
 		
 		if(expireSql==null||expireSql.trim().length()==0) {
-			expireSql = "UPDATE "+codeTableConfig.getCodeTableName()+" SET EXPIRY_DATE = CURRENT_DATE, "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")+"WHO_UPDATED = ?, WHEN_UPDATED = CURRENT_TIMESTAMP WHERE "+codeTableConfig.getCodeTableName()+" = ?";
+			expireSql = "UPDATE "+codeTableConfig.getCodeTableName()+" SET EXPIRY_DATE = CURRENT_DATE, "+(Boolean.TRUE.equals(codeTableConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1, ":"")+"WHO_UPDATED = ?, WHEN_UPDATED = CURRENT_TIMESTAMP WHERE "+codeTableConfig.getCodeCodeName()+" = ?";
 		
 		}
 
