@@ -312,7 +312,7 @@ public class DtoUtils {
 		if(v1==null&&v2==null) {
 			
 			result = true;
-		} else if(v1!=null&&v2!=null&&v1.getClass().equals(v1.getClass())) {
+		} else if(v1!=null&&v2!=null&&v1.getClass().equals(v2.getClass())) {
 			
 			try {
 				String methodName = "get"+propertyName.substring(0,1).toUpperCase()+propertyName.substring(1);
@@ -323,7 +323,7 @@ public class DtoUtils {
 				Object value1 = method.invoke(v1);
 				Object value2 = method.invoke(v2);
 				
-				result = value1.equals(value2);
+				result = (value1 == null && value2 == null) || (value1 != null && value1.equals(value2));
 			} catch (Exception e) {
 				throw new IllegalStateException(e.getMessage(), e);
 			} 
