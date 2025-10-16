@@ -15,13 +15,13 @@ import ca.bc.gov.brmb.common.model.CodeTable;
 @JsonSubTypes({ @Type(value = CodeTableRsrc.class, name = BaseResourceTypes.CODE_TABLE) })
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
 public class CodeTableRsrc extends BaseResource implements CodeTable<CodeRsrc> {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private String codeTableName;
-	
+
 	private List<CodeRsrc> codes;
-	
+
 	@Override
 	public String getCodeTableName() {
 		return codeTableName;
@@ -33,6 +33,21 @@ public class CodeTableRsrc extends BaseResource implements CodeTable<CodeRsrc> {
 	}
 
 	@Override
+	public String getCodeTableDescriptiveName() {
+		return switch (codeTableName) {
+			case "farm_crop_units" -> "Crop Unit";
+			case "farm_farm_type_codes" -> "Farm Type Codes";
+			case "farm_federal_accounting_codes" -> "Federal Accounting";
+			case "farm_federal_status_codes" -> "Federal Status";
+			case "farm_participant_class_codes" -> "Participant Class";
+			case "farm_participant_lang_codes" -> "Participant Language";
+			case "farm_participant_profile_codes" -> "Participant Profile";
+			case "farm_triage_queue_codes" -> "Triage Queue";
+			default -> codeTableName;
+		};
+	}
+
+	@Override
 	public List<CodeRsrc> getCodes() {
 		return codes;
 	}
@@ -41,5 +56,5 @@ public class CodeTableRsrc extends BaseResource implements CodeTable<CodeRsrc> {
 	public void setCodes(List<CodeRsrc> codes) {
 		this.codes = codes;
 	}
-	
+
 }

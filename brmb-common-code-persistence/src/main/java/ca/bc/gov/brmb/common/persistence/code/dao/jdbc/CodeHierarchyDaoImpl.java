@@ -160,10 +160,10 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 		String fetchSql = codeHierarchyConfig.getFetchSql();
 		
 		if(fetchSql==null||fetchSql.trim().length()==0) {
-			fetchSql = "select "+codeHierarchyConfig.getSkeyColumnName()+" SKEY, "+codeHierarchyConfig.getUpperCodeColumnName()+" UPPER_CODE, "+codeHierarchyConfig.getLowerCodeColumnName()+" LOWER_CODE, EFFECTIVE_DATE, EXPIRY_DATE, CREATE_USER, CREATE_DATE, UPDATE_USER, UPDATE_DATE from "+codeHierarchyConfig.getCodeHierarchyTableName();
+			fetchSql = "select "+codeHierarchyConfig.getSkeyColumnName()+" SKEY, "+codeHierarchyConfig.getUpperCodeColumnName()+" UPPER_CODE, "+codeHierarchyConfig.getLowerCodeColumnName()+" LOWER_CODE, ESTABLISHED_DATE, EXPIRY_DATE, WHO_CREATED, WHEN_CREATED, WHO_UPDATED, WHEN_UPDATED from "+codeHierarchyConfig.getCodeHierarchyTableName();
 		}
 
-		fetchSql = "select * from ("+fetchSql+") t "+(effectiveAsOfDate==null?"":"WHERE ? BETWEEN EFFECTIVE_DATE AND EXPIRY_DATE");
+		fetchSql = "select * from ("+fetchSql+") t "+(effectiveAsOfDate==null?"":"WHERE ? BETWEEN ESTABLISHED_DATE AND EXPIRY_DATE");
 		
 		logger.debug("fetchSql="+fetchSql);
 		try (PreparedStatement st = conn.prepareStatement(fetchSql)) {
@@ -184,12 +184,12 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 					dto.setSkey(rs.getString("SKEY"));
 					dto.setUpperCode(rs.getString("UPPER_CODE"));
 					dto.setLowerCode(rs.getString("LOWER_CODE"));
-					dto.setEffectiveDate(getLocalDate(rs, "EFFECTIVE_DATE"));
+					dto.setEffectiveDate(getLocalDate(rs, "ESTABLISHED_DATE"));
 					dto.setExpiryDate(getLocalDate(rs, "EXPIRY_DATE"));
-					dto.setCreateTimestamp(getInstant(rs, "CREATE_DATE"));
-					dto.setCreateUser(rs.getString("CREATE_USER"));
-					dto.setUpdateTimestamp(getInstant(rs, "UPDATE_DATE"));
-					dto.setUpdateUser(rs.getString("UPDATE_USER"));
+					dto.setCreateTimestamp(getInstant(rs, "WHEN_CREATED"));
+					dto.setCreateUser(rs.getString("WHO_CREATED"));
+					dto.setUpdateTimestamp(getInstant(rs, "WHEN_UPDATED"));
+					dto.setUpdateUser(rs.getString("WHO_UPDATED"));
 					
 					result.add(dto);
 				}
@@ -214,13 +214,13 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 					+ codeHierarchyConfig.getSkeyColumnName()+", "
 					+ codeHierarchyConfig.getUpperCodeColumnName()+", "
 					+ codeHierarchyConfig.getLowerCodeColumnName()+", "
-					+ "EFFECTIVE_DATE, "
+					+ "ESTABLISHED_DATE, "
 					+ "EXPIRY_DATE, "
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"REVISION_COUNT, ":"")
-					+ "CREATE_USER, "
-					+ "CREATE_DATE, "
-					+ "UPDATE_USER, "
-					+ "UPDATE_DATE"
+					+ "WHO_CREATED, "
+					+ "WHEN_CREATED, "
+					+ "WHO_UPDATED, "
+					+ "WHEN_UPDATED"
 					+ ") values ("
 					+ (codeHierarchyConfig.getSkeySequenceName()==null?"sys_guid(),":codeHierarchyConfig.getSkeySequenceName()+".nextval,")
 					+ "?,"
@@ -267,11 +267,11 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 		if(updateSql==null||updateSql.trim().length()==0) {
 			
 			updateSql = "update "+codeHierarchyConfig.getCodeHierarchyTableName()+" set "
-					+ "EFFECTIVE_DATE = ?,"
+					+ "ESTABLISHED_DATE = ?,"
 					+ "EXPIRY_DATE = "+(dto.getExpiryDate()==null?"to_date('9999-12-31','YYYY-MM-DD')":"?")+","
-					+ "UPDATE_USER = ?,"
+					+ "WHO_UPDATED = ?,"
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1,":"")
-					+ "UPDATE_DATE = CURRENT_TIMESTAMP "
+					+ "WHEN_UPDATED = CURRENT_TIMESTAMP "
 					+ "WHERE "+codeHierarchyConfig.getUpperCodeColumnName()+" = ?"
 					+ "  AND "+codeHierarchyConfig.getLowerCodeColumnName()+" = ?";
 		}
@@ -308,9 +308,9 @@ public class CodeHierarchyDaoImpl extends BaseDao implements CodeHierarchyDao {
 			
 			expireSql = "update "+codeHierarchyConfig.getCodeHierarchyTableName()+" set "
 					+ "EXPIRY_DATE = CURRENT_DATE,"
-					+ "UPDATE_USER = ?,"
+					+ "WHO_UPDATED = ?,"
 					+ (Boolean.TRUE.equals(codeHierarchyConfig.getUseRevisionCount())?"REVISION_COUNT = REVISION_COUNT + 1,":"")
-					+ "UPDATE_DATE = CURRENT_TIMESTAMP "
+					+ "WHEN_UPDATED = CURRENT_TIMESTAMP "
 					+ "WHERE "+codeHierarchyConfig.getUpperCodeColumnName()+" = ?"
 					+ "  AND "+codeHierarchyConfig.getLowerCodeColumnName()+" = ?";
 		}

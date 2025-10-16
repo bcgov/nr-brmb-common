@@ -74,7 +74,7 @@ public class CodeEndpointsImpl extends BaseEndpointsImpl implements CodeEndpoint
     }
 
     @Override
-    public Response deleteCode(String codeTableName, String codeName) {
+    public Response deleteCode(String codeTableName, String codeName, CodeRsrc codeRsrc) {
         logger.debug("<deleteCode");
 
         Response response = null;
@@ -85,7 +85,7 @@ public class CodeEndpointsImpl extends BaseEndpointsImpl implements CodeEndpoint
 
             String optimisticLock = getIfMatchHeader();
 
-            service.deleteCode(codeTableName, optimisticLock, codeName, getFactoryContext());
+            service.deleteCode(codeTableName, optimisticLock, codeName, codeRsrc.getUserEmail(), getFactoryContext());
 
             response = Response.status(Status.NO_CONTENT).build();
         } catch (NotFoundException e) {

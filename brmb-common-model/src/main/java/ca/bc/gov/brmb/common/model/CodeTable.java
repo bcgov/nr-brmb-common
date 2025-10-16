@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 public interface CodeTable<C extends Code> extends Serializable {
-	
+
 	public String getCodeTableName();
 
 	public void setCodeTableName(String codeTableName);
+
+	public String getCodeTableDescriptiveName();
 
 	public List<C> getCodes();
 

@@ -19,4 +19,7 @@ public interface Code extends Serializable {
 
 	public LocalDate getExpiryDate();
 	public void setExpiryDate(LocalDate expiryDate);
+
+	public String getUserEmail();
+	public void setUserEmail(String userEmail);
 }

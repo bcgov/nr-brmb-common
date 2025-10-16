@@ -96,9 +96,11 @@ public interface CodeEndpoints {
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = MessageListRsrc.class))) })
     @DELETE
     @Path("/{codeName}")
+    @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Response deleteCode(
             @Parameter(description = "The identifier of the CodeTable resource.") @PathParam("codeTableName") String codeTableName,
-            @Parameter(description = "The identifier of the Code resource.") @PathParam("codeName") String codeName);
+            @Parameter(description = "The identifier of the Code resource.") @PathParam("codeName") String codeName,
+            @Parameter(name = "codeRsrc", description = "The code resource containing the new values.", required = true) CodeRsrc codeRsrc);
 
     @Operation(operationId = "Update Code resource.", summary = "Update Code resource.", extensions = {
             @Extension(properties = {

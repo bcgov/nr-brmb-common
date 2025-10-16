@@ -11,6 +11,7 @@ public class CodeImpl implements Code {
 	private Integer displayOrder;
 	private LocalDate effectiveDate;
 	private LocalDate expiryDate;
+	private String userEmail;
 
 	public CodeImpl() {
 		// do nothing
@@ -56,6 +57,14 @@ public class CodeImpl implements Code {
 		this.expiryDate = expiryDate;
 	}
 
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,6 +76,8 @@ public class CodeImpl implements Code {
 				+ ((effectiveDate == null) ? 0 : effectiveDate.hashCode());
 		result = prime * result
 				+ ((expiryDate == null) ? 0 : expiryDate.hashCode());
+		result = prime * result
+				+ ((userEmail == null) ? 0 : userEmail.hashCode());
 		return result;
 	}
 
@@ -98,6 +109,11 @@ public class CodeImpl implements Code {
 			if (other.expiryDate != null)
 				return false;
 		} else if (!expiryDate.equals(other.expiryDate))
+			return false;
+		if (userEmail == null) {
+			if (other.userEmail != null)
+				return false;
+		} else if (!userEmail.equals(other.userEmail))
 			return false;
 		return true;
 	}

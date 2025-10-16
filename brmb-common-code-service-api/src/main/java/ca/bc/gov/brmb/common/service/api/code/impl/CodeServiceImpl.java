@@ -31,6 +31,7 @@ import ca.bc.gov.brmb.common.service.api.NotFoundException;
 import ca.bc.gov.brmb.common.service.api.ServiceException;
 import ca.bc.gov.brmb.common.service.api.ValidationFailureException;
 import ca.bc.gov.brmb.common.service.api.code.CodeService;
+import ca.bc.gov.brmb.common.service.api.code.UserUtil;
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeFactory;
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeHierarchyFactory;
 import ca.bc.gov.brmb.common.service.api.code.model.factory.CodeTableFactory;
@@ -177,7 +178,7 @@ public class CodeServiceImpl implements CodeService {
             codeDto.setEffectiveDate(code.getEffectiveDate());
             codeDto.setExpiryDate(code.getExpiryDate());
             codeTableDto.getCodes().add(codeDto);
-            dao.update(codeTableConfig, codeTableDto, optimisticLock, "UserId");
+            dao.update(codeTableConfig, codeTableDto, optimisticLock, UserUtil.toUserId(code.getUserEmail()));
 
             result = this.codeFactory.getCode(codeTableDto, codeDto, factoryContext);
 
@@ -192,7 +193,7 @@ public class CodeServiceImpl implements CodeService {
     }
 
     @Override
-    public void deleteCode(String codeTableName, String optimisticLock, String codeName, FactoryContext factoryContext)
+    public void deleteCode(String codeTableName, String optimisticLock, String codeName, String userEmail, FactoryContext factoryContext)
             throws ServiceException, NotFoundException, ConflictException {
         logger.debug("<deleteCode");
 
@@ -244,7 +245,7 @@ public class CodeServiceImpl implements CodeService {
                 throw new NotFoundException("Did not find the Code: " + codeName);
             }
 
-            dao.update(codeTableConfig, codeTableDto, optimisticLock, "UserId");
+            dao.update(codeTableConfig, codeTableDto, optimisticLock, UserUtil.toUserId(userEmail));
 
         } catch (OptimisticLockingFailureDaoException e) {
             throw new ConflictException(e.getMessage());
@@ -312,7 +313,7 @@ public class CodeServiceImpl implements CodeService {
             codeDto.setDisplayOrder(code.getDisplayOrder());
             codeDto.setEffectiveDate(code.getEffectiveDate());
             codeDto.setExpiryDate(code.getExpiryDate());
-            dao.update(codeTableConfig, codeTableDto, optimisticLock, "UserId");
+            dao.update(codeTableConfig, codeTableDto, optimisticLock, UserUtil.toUserId(code.getUserEmail()));
 
             result = this.codeFactory.getCode(codeTableDto, codeDto, factoryContext);
 
